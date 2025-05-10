@@ -6,30 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4712DCFB091006F5F7C /* Assets.xcassets */; };
+		99D6A47D2DCFB091006F5F7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4742DCFB091006F5F7C /* LaunchScreen.storyboard */; };
+		99D6A47F2DCFB091006F5F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4702DCFB091006F5F7C /* AppDelegate.swift */; };
+		99D6A4802DCFB091006F5F7C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */; };
+		99D6A4812DCFB091006F5F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */; };
+		99D6A4862DCFB0EE006F5F7C /* LifeDaysOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */; };
+		99D6A4872DCFB0EE006F5F7C /* LifeDaysTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		99D6A4562DCFAF14006F5F7C /* AirConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99D6A4702DCFB091006F5F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		99D6A4712DCFB091006F5F7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		99D6A4722DCFB091006F5F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99D6A4732DCFB091006F5F7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeDaysOne.swift; sourceTree = "<group>"; };
+		99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeDaysTwo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		99D6A4682DCFAF15006F5F7C /* Exceptions for "AirConverter" folder in "AirConverter" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 99D6A4552DCFAF14006F5F7C /* AirConverter */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		99D6A4582DCFAF14006F5F7C /* AirConverter */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				99D6A4682DCFAF15006F5F7C /* Exceptions for "AirConverter" folder in "AirConverter" target */,
-			);
-			path = AirConverter;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		99D6A4532DCFAF14006F5F7C /* Frameworks */ = {
@@ -45,7 +42,7 @@
 		99D6A44D2DCFAF14006F5F7C = {
 			isa = PBXGroup;
 			children = (
-				99D6A4582DCFAF14006F5F7C /* AirConverter */,
+				99D6A47A2DCFB091006F5F7C /* AirConverter */,
 				99D6A4572DCFAF14006F5F7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +53,29 @@
 				99D6A4562DCFAF14006F5F7C /* AirConverter.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		99D6A47A2DCFB091006F5F7C /* AirConverter */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A4702DCFB091006F5F7C /* AppDelegate.swift */,
+				99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */,
+				99D6A4742DCFB091006F5F7C /* LaunchScreen.storyboard */,
+				99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */,
+				99D6A4852DCFB0EE006F5F7C /* LifeDays */,
+				99D6A4712DCFB091006F5F7C /* Assets.xcassets */,
+				99D6A4722DCFB091006F5F7C /* Info.plist */,
+			);
+			path = AirConverter;
+			sourceTree = "<group>";
+		};
+		99D6A4852DCFB0EE006F5F7C /* LifeDays */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */,
+				99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */,
+			);
+			path = LifeDays;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +92,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				99D6A4582DCFAF14006F5F7C /* AirConverter */,
 			);
 			name = AirConverter;
 			packageProductDependencies = (
@@ -122,6 +139,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */,
+				99D6A47D2DCFB091006F5F7C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +151,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D6A47F2DCFB091006F5F7C /* AppDelegate.swift in Sources */,
+				99D6A4802DCFB091006F5F7C /* MainTabBarController.swift in Sources */,
+				99D6A4862DCFB0EE006F5F7C /* LifeDaysOne.swift in Sources */,
+				99D6A4872DCFB0EE006F5F7C /* LifeDaysTwo.swift in Sources */,
+				99D6A4812DCFB091006F5F7C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		99D6A4742DCFB091006F5F7C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99D6A4732DCFB091006F5F7C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		99D6A46A2DCFAF15006F5F7C /* Debug */ = {
@@ -150,9 +185,9 @@
 				INFOPLIST_FILE = AirConverter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -160,6 +195,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.avtabenskiy.AirConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -178,9 +216,9 @@
 				INFOPLIST_FILE = AirConverter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -188,6 +226,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.avtabenskiy.AirConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
