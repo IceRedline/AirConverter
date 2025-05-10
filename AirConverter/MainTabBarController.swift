@@ -22,16 +22,16 @@ final class MainTabBarController: UITabBarController {
         swiftUIController.tabBarItem = UITabBarItem(title: "SwiftUI", image: UIImage(systemName: "star"), tag: 1)
          */
         let lifeDaysOneVC = self.createNav(
-            title: "LifeDays1",
-            image: UIImage(systemName: "iphone")!,
+            title: "Калькулятор дней",
+            image: UIImage(systemName: "calendar")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
             vc: LifeDaysOne()
         )
         
         let lifeDaysTwoVC = self.createNav(
-            title: "LifeDays2",
-            image: UIImage(systemName: "bell")!,
+            title: "Дни жизни",
+            image: UIImage(systemName: "birthday.cake")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
             vc: LifeDaysTwo()

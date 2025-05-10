@@ -29,7 +29,7 @@ class LifeDaysOne: UIViewController {
         return label
     }()
     
-    let firstDatePicker: UIDatePicker = {
+    lazy var firstDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ class LifeDaysOne: UIViewController {
         return label
     }()
     
-    let secondDatePicker: UIDatePicker = {
+    lazy var secondDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +54,7 @@ class LifeDaysOne: UIViewController {
         return datePicker
     }()
     
-    var resultButton: UIButton = {
+    lazy var resultButton: UIButton = {
         let button = UIButton()
         button.setTitle("Посчитать", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
@@ -96,7 +96,7 @@ class LifeDaysOne: UIViewController {
         NSLayoutConstraint.activate([
             lifeDaysLabel.widthAnchor.constraint(equalToConstant: 350),
             lifeDaysLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            lifeDaysLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            lifeDaysLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             firstDateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             firstDateLabel.topAnchor.constraint(equalTo: lifeDaysLabel.bottomAnchor, constant: 40),
             firstDatePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -114,8 +114,6 @@ class LifeDaysOne: UIViewController {
             resultLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor, constant: 30)
         ])
     }
-    
-     private func unwindSegue(unwindSegue:UIStoryboardSegue) { }
 
      @objc private func firstDatePickerChanged(_ sender: UIDatePicker) {
         firstdate = sender.date
@@ -131,6 +129,8 @@ class LifeDaysOne: UIViewController {
     }
 }
 
-#Preview(traits: .defaultLayout, body: {
-    MainTabBarController()
-})
+#Preview {
+    let tabBar = MainTabBarController()
+    tabBar.selectedIndex = 0
+    return tabBar
+}
