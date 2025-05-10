@@ -14,6 +14,14 @@
 		99D6A4812DCFB091006F5F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */; };
 		99D6A4862DCFB0EE006F5F7C /* LifeDaysOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */; };
 		99D6A4872DCFB0EE006F5F7C /* LifeDaysTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */; };
+		99D6A4942DCFC42F006F5F7C /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48D2DCFC42F006F5F7C /* ConverterView.swift */; };
+		99D6A4952DCFC42F006F5F7C /* ConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4922DCFC42F006F5F7C /* ConverterViewModel.swift */; };
+		99D6A4962DCFC42F006F5F7C /* CurrencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48F2DCFC42F006F5F7C /* CurrencyPicker.swift */; };
+		99D6A4972DCFC42F006F5F7C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4902DCFC42F006F5F7C /* MainView.swift */; };
+		99D6A4982DCFC42F006F5F7C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48A2DCFC42F006F5F7C /* Currency.swift */; };
+		99D6A4992DCFC42F006F5F7C /* MoexDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48B2DCFC42F006F5F7C /* MoexDataLoader.swift */; };
+		99D6A49A2DCFC42F006F5F7C /* CurrencyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48E2DCFC42F006F5F7C /* CurrencyInput.swift */; };
+		99D6A49B2DCFC42F006F5F7C /* ConverterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeDaysOne.swift; sourceTree = "<group>"; };
 		99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeDaysTwo.swift; sourceTree = "<group>"; };
+		99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterModel.swift; sourceTree = "<group>"; };
+		99D6A48A2DCFC42F006F5F7C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		99D6A48B2DCFC42F006F5F7C /* MoexDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoexDataLoader.swift; sourceTree = "<group>"; };
+		99D6A48D2DCFC42F006F5F7C /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
+		99D6A48E2DCFC42F006F5F7C /* CurrencyInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInput.swift; sourceTree = "<group>"; };
+		99D6A48F2DCFC42F006F5F7C /* CurrencyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPicker.swift; sourceTree = "<group>"; };
+		99D6A4902DCFC42F006F5F7C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		99D6A4922DCFC42F006F5F7C /* ConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +78,7 @@
 				99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */,
 				99D6A4742DCFB091006F5F7C /* LaunchScreen.storyboard */,
 				99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */,
+				99D6A4882DCFC426006F5F7C /* Converter */,
 				99D6A4852DCFB0EE006F5F7C /* LifeDays */,
 				99D6A4712DCFB091006F5F7C /* Assets.xcassets */,
 				99D6A4722DCFB091006F5F7C /* Info.plist */,
@@ -76,6 +93,45 @@
 				99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */,
 			);
 			path = LifeDays;
+			sourceTree = "<group>";
+		};
+		99D6A4882DCFC426006F5F7C /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A48C2DCFC42F006F5F7C /* Model */,
+				99D6A4912DCFC42F006F5F7C /* View */,
+				99D6A4932DCFC42F006F5F7C /* VIewModel */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		99D6A48C2DCFC42F006F5F7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */,
+				99D6A48A2DCFC42F006F5F7C /* Currency.swift */,
+				99D6A48B2DCFC42F006F5F7C /* MoexDataLoader.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99D6A4912DCFC42F006F5F7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A48D2DCFC42F006F5F7C /* ConverterView.swift */,
+				99D6A48E2DCFC42F006F5F7C /* CurrencyInput.swift */,
+				99D6A48F2DCFC42F006F5F7C /* CurrencyPicker.swift */,
+				99D6A4902DCFC42F006F5F7C /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99D6A4932DCFC42F006F5F7C /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A4922DCFC42F006F5F7C /* ConverterViewModel.swift */,
+			);
+			path = VIewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +208,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D6A47F2DCFB091006F5F7C /* AppDelegate.swift in Sources */,
+				99D6A4942DCFC42F006F5F7C /* ConverterView.swift in Sources */,
+				99D6A4952DCFC42F006F5F7C /* ConverterViewModel.swift in Sources */,
+				99D6A4962DCFC42F006F5F7C /* CurrencyPicker.swift in Sources */,
+				99D6A4972DCFC42F006F5F7C /* MainView.swift in Sources */,
+				99D6A4982DCFC42F006F5F7C /* Currency.swift in Sources */,
+				99D6A4992DCFC42F006F5F7C /* MoexDataLoader.swift in Sources */,
+				99D6A49A2DCFC42F006F5F7C /* CurrencyInput.swift in Sources */,
+				99D6A49B2DCFC42F006F5F7C /* ConverterModel.swift in Sources */,
 				99D6A4802DCFB091006F5F7C /* MainTabBarController.swift in Sources */,
 				99D6A4862DCFB0EE006F5F7C /* LifeDaysOne.swift in Sources */,
 				99D6A4872DCFB0EE006F5F7C /* LifeDaysTwo.swift in Sources */,

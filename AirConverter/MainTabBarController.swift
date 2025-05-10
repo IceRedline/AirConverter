@@ -16,11 +16,14 @@ final class MainTabBarController: UITabBarController {
     }
     
     private func setupTabs() {
-        /*
-        let swiftUIView = MySwiftUIView()
-        let swiftUIController = UIHostingController(rootView: swiftUIView)
-        swiftUIController.tabBarItem = UITabBarItem(title: "SwiftUI", image: UIImage(systemName: "star"), tag: 1)
-         */
+        
+        let converterViewModel = ConverterViewModel()
+        let converterSFUIView = ConverterView()
+        .environmentObject(converterViewModel)
+        let swiftUIController = UIHostingController(rootView: converterSFUIView)
+
+        swiftUIController.tabBarItem = UITabBarItem(title: "Конвертер", image: UIImage(systemName: "star"), tag: 1)
+        
         let lifeDaysOneVC = self.createNav(
             title: "Калькулятор дней",
             image: UIImage(systemName: "calendar")!,
@@ -37,7 +40,7 @@ final class MainTabBarController: UITabBarController {
             vc: LifeDaysTwo()
         )
         
-        self.setViewControllers([lifeDaysOneVC, lifeDaysTwoVC], animated: true)
+        self.setViewControllers([swiftUIController, lifeDaysOneVC, lifeDaysTwoVC], animated: true)
     }
     
     private func createNav(title: String, image: UIImage, leftButtonItem: UIBarButtonItem?, rightButtonItem: UIBarButtonItem?, vc: UIViewController) -> UINavigationController {
