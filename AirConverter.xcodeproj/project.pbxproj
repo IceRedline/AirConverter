@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */; };
+		99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7D012DD0BCA400352A16 /* Animations.swift */; };
 		99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4712DCFB091006F5F7C /* Assets.xcassets */; };
 		99D6A47D2DCFB091006F5F7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4742DCFB091006F5F7C /* LaunchScreen.storyboard */; };
 		99D6A47F2DCFB091006F5F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4702DCFB091006F5F7C /* AppDelegate.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		99CC7D012DD0BCA400352A16 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		99D6A4562DCFAF14006F5F7C /* AirConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D6A4702DCFB091006F5F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99D6A4712DCFB091006F5F7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99CC7D002DD0BBCF00352A16 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		99CC7D032DD0BCAC00352A16 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				99CC7D012DD0BCA400352A16 /* Animations.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		99D6A44D2DCFAF14006F5F7C = {
 			isa = PBXGroup;
 			children = (
@@ -77,9 +97,11 @@
 				99D6A4702DCFB091006F5F7C /* AppDelegate.swift */,
 				99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */,
 				99D6A4742DCFB091006F5F7C /* LaunchScreen.storyboard */,
+				99CC7D032DD0BCAC00352A16 /* Services */,
 				99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */,
 				99D6A4882DCFC426006F5F7C /* Converter */,
 				99D6A4852DCFB0EE006F5F7C /* LifeDays */,
+				99CC7D002DD0BBCF00352A16 /* Calculator */,
 				99D6A4712DCFB091006F5F7C /* Assets.xcassets */,
 				99D6A4722DCFB091006F5F7C /* Info.plist */,
 			);
@@ -218,7 +240,9 @@
 				99D6A49B2DCFC42F006F5F7C /* ConverterModel.swift in Sources */,
 				99D6A4802DCFB091006F5F7C /* MainTabBarController.swift in Sources */,
 				99D6A4862DCFB0EE006F5F7C /* LifeDaysOne.swift in Sources */,
+				99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */,
 				99D6A4872DCFB0EE006F5F7C /* LifeDaysTwo.swift in Sources */,
+				99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */,
 				99D6A4812DCFB091006F5F7C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,8 +273,8 @@
 				INFOPLIST_FILE = AirConverter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -261,6 +285,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -280,8 +305,8 @@
 				INFOPLIST_FILE = AirConverter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,6 +317,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -13,10 +13,8 @@ class LifeDaysTwo: UIViewController {
         let label = UILabel()
         label.text = "Радуйся каждому дню!"
         label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
-        label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -24,8 +22,6 @@ class LifeDaysTwo: UIViewController {
         let label = UILabel()
         label.text = "Выбери свой день рождения:"
         label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -33,7 +29,6 @@ class LifeDaysTwo: UIViewController {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .wheels
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.addTarget(self, action: #selector(datePickerWheelChanged), for: .valueChanged)
         return datePicker
     }()
@@ -44,7 +39,6 @@ class LifeDaysTwo: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 12
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(resultButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -54,9 +48,7 @@ class LifeDaysTwo: UIViewController {
         label.text = "Ты наслаждаешься жизнью уже ... дней!"
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
-        label.textColor = .black
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -71,11 +63,10 @@ class LifeDaysTwo: UIViewController {
     }
     
     private func setupUI() {
-        view.addSubview(lifeDaysLabel)
-        view.addSubview(birthdayLabel)
-        view.addSubview(datePickerWheels)
-        view.addSubview(resultButton)
-        view.addSubview(resultLabel)
+        [lifeDaysLabel, birthdayLabel, datePickerWheels, resultButton, resultLabel].forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(view)
+        }
         
         NSLayoutConstraint.activate([
             lifeDaysLabel.widthAnchor.constraint(equalToConstant: 350),
@@ -118,6 +109,6 @@ class LifeDaysTwo: UIViewController {
 
 #Preview {
     let tabBar = MainTabBarController()
-    tabBar.selectedIndex = 1
+    tabBar.selectedIndex = 2
     return tabBar
 }

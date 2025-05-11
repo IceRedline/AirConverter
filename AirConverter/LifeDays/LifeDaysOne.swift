@@ -13,7 +13,6 @@ class LifeDaysOne: UIViewController {
         let label = UILabel()
         label.text = "Сколько прошло дней между двумя датами"
         label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
-        label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +23,6 @@ class LifeDaysOne: UIViewController {
         let label = UILabel()
         label.text = "Первая дата"
         label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -32,7 +30,6 @@ class LifeDaysOne: UIViewController {
     lazy var firstDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.addTarget(self, action: #selector(firstDatePickerChanged), for: .valueChanged)
         return datePicker
     }()
@@ -41,7 +38,6 @@ class LifeDaysOne: UIViewController {
         let label = UILabel()
         label.text = "Вторая дата"
         label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -49,7 +45,6 @@ class LifeDaysOne: UIViewController {
     lazy var secondDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.addTarget(self, action: #selector(secondDatePickerChanged), for: .valueChanged)
         return datePicker
     }()
@@ -60,7 +55,6 @@ class LifeDaysOne: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         button.backgroundColor = .systemCyan
         button.layer.cornerRadius = 12
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(resultButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -69,9 +63,7 @@ class LifeDaysOne: UIViewController {
         let label = UILabel()
         label.text = "... дней"
         label.font = UIFont.systemFont(ofSize: 46, weight: .bold)
-        label.textColor = .black
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -85,13 +77,10 @@ class LifeDaysOne: UIViewController {
     }
     
     private func setupUI() {
-        view.addSubview(lifeDaysLabel)
-        view.addSubview(firstDateLabel)
-        view.addSubview(firstDatePicker)
-        view.addSubview(secondDateLabel)
-        view.addSubview(secondDatePicker)
-        view.addSubview(resultButton)
-        view.addSubview(resultLabel)
+        [lifeDaysLabel, firstDateLabel, firstDatePicker, secondDateLabel, secondDatePicker, resultButton, resultLabel].forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(view)
+        }
         
         NSLayoutConstraint.activate([
             lifeDaysLabel.widthAnchor.constraint(equalToConstant: 350),
@@ -131,6 +120,6 @@ class LifeDaysOne: UIViewController {
 
 #Preview {
     let tabBar = MainTabBarController()
-    tabBar.selectedIndex = 0
+    tabBar.selectedIndex = 1
     return tabBar
 }

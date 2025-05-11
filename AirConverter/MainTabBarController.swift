@@ -18,11 +18,16 @@ final class MainTabBarController: UITabBarController {
     private func setupTabs() {
         
         let converterViewModel = ConverterViewModel()
-        let converterSFUIView = ConverterView()
-        .environmentObject(converterViewModel)
-        let swiftUIController = UIHostingController(rootView: converterSFUIView)
-
-        swiftUIController.tabBarItem = UITabBarItem(title: "Конвертер", image: UIImage(systemName: "star"), tag: 1)
+        let converterView = ConverterView().environmentObject(converterViewModel)
+        let hostingVC = UIHostingController(rootView: converterView)
+        
+        let swiftUINavigationVC = createNav(
+            title: "Конвертер",
+            image: UIImage(systemName: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90")!,
+            leftButtonItem: nil,
+            rightButtonItem: nil,
+            vc: hostingVC
+        )
         
         let lifeDaysOneVC = self.createNav(
             title: "Калькулятор дней",
@@ -40,7 +45,15 @@ final class MainTabBarController: UITabBarController {
             vc: LifeDaysTwo()
         )
         
-        self.setViewControllers([swiftUIController, lifeDaysOneVC, lifeDaysTwoVC], animated: true)
+        let calculatorVC = self.createNav(
+            title: "Калькулятор",
+            image: UIImage(systemName: "plus.forwardslash.minus")!,
+            leftButtonItem: nil,
+            rightButtonItem: nil,
+            vc: CalculatorViewController()
+        )
+        
+        self.setViewControllers([swiftUINavigationVC, lifeDaysOneVC, lifeDaysTwoVC, calculatorVC], animated: true)
     }
     
     private func createNav(title: String, image: UIImage, leftButtonItem: UIBarButtonItem?, rightButtonItem: UIBarButtonItem?, vc: UIViewController) -> UINavigationController {
@@ -56,3 +69,7 @@ final class MainTabBarController: UITabBarController {
         return nav
     }
 }
+
+#Preview(body: {
+    MainTabBarController()
+})
