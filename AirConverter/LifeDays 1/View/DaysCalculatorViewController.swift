@@ -7,7 +7,9 @@
 
 import UIKit
 
-class LifeDaysOne: UIViewController {
+class DaysCalculatorViewController: UIViewController, DaysCalculatorViewControllerProtocol {
+    
+    var presenter: DaysCalculatorPresenterProtocol?
     
     let lifeDaysLabel: UILabel = {
         let label = UILabel()
@@ -66,14 +68,16 @@ class LifeDaysOne: UIViewController {
         label.textAlignment = .center
         return label
     }()
-
-    private var firstdate = Date.now
-    private var seconddate = Date.now
-    private var difference = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure(DaysCalculatorPresenter())
         setupUI()
+    }
+    
+    func configure(_ presenter: DaysCalculatorPresenterProtocol) {
+        self.presenter = presenter
+        self.presenter?.view = self
     }
     
     private func setupUI() {
@@ -103,18 +107,21 @@ class LifeDaysOne: UIViewController {
             resultLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor, constant: 30)
         ])
     }
-
-     @objc private func firstDatePickerChanged(_ sender: UIDatePicker) {
-        firstdate = sender.date
+    
+    @objc private func firstDatePickerChanged(_ sender: UIDatePicker) {
+        presenter?.updateFirstDate(with: sender.date)
     }
     
-     @objc private func secondDatePickerChanged(_ sender: UIDatePicker) {
-        seconddate = sender.date
+    @objc private func secondDatePickerChanged(_ sender: UIDatePicker) {
+        presenter?.updateSecondDate(with: sender.date)
+    }
+    
+    func updateResultLabel(with string: String) {
+        resultLabel.text = string
     }
     
     @objc private func resultButtonTapped() {
-        difference = Calendar.current.dateComponents([.day], from: firstdate, to: seconddate).day ?? 0000
-        resultLabel.text = "\(difference) дней"
+        presenter?.calculateResult()
     }
 }
 

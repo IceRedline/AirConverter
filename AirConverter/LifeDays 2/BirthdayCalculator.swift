@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LifeDaysTwo: UIViewController {
+class BirthdayCalculator: UIViewController {
     
     let lifeDaysLabel: UILabel = {
         let label = UILabel()

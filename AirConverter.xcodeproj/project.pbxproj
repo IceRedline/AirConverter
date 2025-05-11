@@ -14,8 +14,8 @@
 		99D6A47F2DCFB091006F5F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4702DCFB091006F5F7C /* AppDelegate.swift */; };
 		99D6A4802DCFB091006F5F7C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */; };
 		99D6A4812DCFB091006F5F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */; };
-		99D6A4862DCFB0EE006F5F7C /* LifeDaysOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */; };
-		99D6A4872DCFB0EE006F5F7C /* LifeDaysTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */; };
+		99D6A4862DCFB0EE006F5F7C /* DaysCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4832DCFB0EE006F5F7C /* DaysCalculatorViewController.swift */; };
+		99D6A4872DCFB0EE006F5F7C /* BirthdayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4842DCFB0EE006F5F7C /* BirthdayCalculator.swift */; };
 		99D6A4942DCFC42F006F5F7C /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48D2DCFC42F006F5F7C /* ConverterView.swift */; };
 		99D6A4952DCFC42F006F5F7C /* ConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4922DCFC42F006F5F7C /* ConverterViewModel.swift */; };
 		99D6A4962DCFC42F006F5F7C /* CurrencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48F2DCFC42F006F5F7C /* CurrencyPicker.swift */; };
@@ -24,6 +24,9 @@
 		99D6A4992DCFC42F006F5F7C /* MoexDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48B2DCFC42F006F5F7C /* MoexDataLoader.swift */; };
 		99D6A49A2DCFC42F006F5F7C /* CurrencyInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48E2DCFC42F006F5F7C /* CurrencyInput.swift */; };
 		99D6A49B2DCFC42F006F5F7C /* ConverterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */; };
+		99E4FE2E2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE2D2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift */; };
+		99E4FE4B2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE4A2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift */; };
+		99E4FE4D2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE4C2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +39,8 @@
 		99D6A4732DCFB091006F5F7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeDaysOne.swift; sourceTree = "<group>"; };
-		99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeDaysTwo.swift; sourceTree = "<group>"; };
+		99D6A4832DCFB0EE006F5F7C /* DaysCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCalculatorViewController.swift; sourceTree = "<group>"; };
+		99D6A4842DCFB0EE006F5F7C /* BirthdayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCalculator.swift; sourceTree = "<group>"; };
 		99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterModel.swift; sourceTree = "<group>"; };
 		99D6A48A2DCFC42F006F5F7C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		99D6A48B2DCFC42F006F5F7C /* MoexDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoexDataLoader.swift; sourceTree = "<group>"; };
@@ -46,6 +49,9 @@
 		99D6A48F2DCFC42F006F5F7C /* CurrencyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPicker.swift; sourceTree = "<group>"; };
 		99D6A4902DCFC42F006F5F7C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		99D6A4922DCFC42F006F5F7C /* ConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModel.swift; sourceTree = "<group>"; };
+		99E4FE2D2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCalculatorPresenter.swift; sourceTree = "<group>"; };
+		99E4FE4A2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCalculatorViewControllerProtocol.swift; sourceTree = "<group>"; };
+		99E4FE4C2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysCalculatorPresenterProtocol 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,8 @@
 				99CC7D032DD0BCAC00352A16 /* Services */,
 				99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */,
 				99D6A4882DCFC426006F5F7C /* Converter */,
-				99D6A4852DCFB0EE006F5F7C /* LifeDays */,
+				99D6A4852DCFB0EE006F5F7C /* LifeDays 1 */,
+				99E4FE4E2DD0ED0600E4A66E /* LifeDays 2 */,
 				99CC7D002DD0BBCF00352A16 /* Calculator */,
 				99D6A4712DCFB091006F5F7C /* Assets.xcassets */,
 				99D6A4722DCFB091006F5F7C /* Info.plist */,
@@ -108,13 +115,14 @@
 			path = AirConverter;
 			sourceTree = "<group>";
 		};
-		99D6A4852DCFB0EE006F5F7C /* LifeDays */ = {
+		99D6A4852DCFB0EE006F5F7C /* LifeDays 1 */ = {
 			isa = PBXGroup;
 			children = (
-				99D6A4832DCFB0EE006F5F7C /* LifeDaysOne.swift */,
-				99D6A4842DCFB0EE006F5F7C /* LifeDaysTwo.swift */,
+				99E4FE492DD0EC0E00E4A66E /* Model */,
+				99E4FE472DD0EBEE00E4A66E /* View */,
+				99E4FE482DD0EC0400E4A66E /* Presenter */,
 			);
-			path = LifeDays;
+			path = "LifeDays 1";
 			sourceTree = "<group>";
 		};
 		99D6A4882DCFC426006F5F7C /* Converter */ = {
@@ -154,6 +162,39 @@
 				99D6A4922DCFC42F006F5F7C /* ConverterViewModel.swift */,
 			);
 			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		99E4FE472DD0EBEE00E4A66E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A4832DCFB0EE006F5F7C /* DaysCalculatorViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99E4FE482DD0EC0400E4A66E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				99E4FE2D2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		99E4FE492DD0EC0E00E4A66E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99E4FE4A2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift */,
+				99E4FE4C2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99E4FE4E2DD0ED0600E4A66E /* LifeDays 2 */ = {
+			isa = PBXGroup;
+			children = (
+				99D6A4842DCFB0EE006F5F7C /* BirthdayCalculator.swift */,
+			);
+			path = "LifeDays 2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,11 +280,14 @@
 				99D6A49A2DCFC42F006F5F7C /* CurrencyInput.swift in Sources */,
 				99D6A49B2DCFC42F006F5F7C /* ConverterModel.swift in Sources */,
 				99D6A4802DCFB091006F5F7C /* MainTabBarController.swift in Sources */,
-				99D6A4862DCFB0EE006F5F7C /* LifeDaysOne.swift in Sources */,
+				99D6A4862DCFB0EE006F5F7C /* DaysCalculatorViewController.swift in Sources */,
+				99E4FE4D2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift in Sources */,
+				99E4FE2E2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift in Sources */,
 				99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */,
-				99D6A4872DCFB0EE006F5F7C /* LifeDaysTwo.swift in Sources */,
+				99D6A4872DCFB0EE006F5F7C /* BirthdayCalculator.swift in Sources */,
 				99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */,
 				99D6A4812DCFB091006F5F7C /* SceneDelegate.swift in Sources */,
+				99E4FE4B2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,7 +34,7 @@ final class MainTabBarController: UITabBarController {
             image: UIImage(systemName: "calendar")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
-            vc: LifeDaysOne()
+            vc: DaysCalculatorViewController()
         )
         
         let lifeDaysTwoVC = self.createNav(
@@ -42,7 +42,7 @@ final class MainTabBarController: UITabBarController {
             image: UIImage(systemName: "birthday.cake")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
-            vc: LifeDaysTwo()
+            vc: BirthdayCalculator()
         )
         
         let calculatorVC = self.createNav(
