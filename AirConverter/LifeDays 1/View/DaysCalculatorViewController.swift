@@ -13,7 +13,7 @@ class DaysCalculatorViewController: UIViewController, DaysCalculatorViewControll
     
     let lifeDaysLabel: UILabel = {
         let label = UILabel()
-        label.text = "Сколько прошло дней между двумя датами"
+        label.text = "Сколько дней прошло  между двумя датами"
         label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
         label.numberOfLines = 0
         label.textAlignment = .center

@@ -7,7 +7,9 @@
 
 import UIKit
 
-class BirthdayCalculator: UIViewController {
+class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProtocol {
+    
+    var presenter: BirthdayCalculatorPresenterProtocol?
     
     let lifeDaysLabel: UILabel = {
         let label = UILabel()
@@ -52,14 +54,15 @@ class BirthdayCalculator: UIViewController {
         return label
     }()
     
-    private var numberOfDays = ""
-    private var firstdate = Date.now
-    private var seconddate = Date.now
-    private var difference = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure(BirthdayCalculatorPresenter())
         setupUI()
+    }
+    
+    func configure(_ presenter: BirthdayCalculatorPresenterProtocol) {
+        self.presenter = presenter
+        self.presenter?.view = self
     }
     
     private func setupUI() {
@@ -87,24 +90,28 @@ class BirthdayCalculator: UIViewController {
     }
     
     @objc private func datePickerWheelChanged(_ sender: UIDatePicker) {
-        if sender.date <= Date.now {
-            if resultLabel.text == "Ты что, в будущем живешь?" {
-                resultLabel.text = "Ты наслаждаешься жизнью уже ... дней!"
-                return
-            }
-            let range = sender.date..<Date.now
-            numberOfDays = range.formatted(.components(style: .wide, fields: [.day]).locale(Locale(identifier: "ru")))
-        }
-        else {
-            resultLabel.text = "Ты что, в будущем живешь?"
-        }
+        presenter?.updateBirthdayDate(with: sender.date)
     }
     
-    @IBAction private func resultButtonTapped() {
-        resultLabel.text = "Ты наслаждаешься жизнью уже \(numberOfDays)!"
+    @objc private func resultButtonTapped() {
+        presenter?.calculateResult()
     }
     
+    func updateResultLabel(with string: String) {
+        resultLabel.text = string
+    }
     
+    func showIncorrectDateLabel() {
+        resultButton.isEnabled = false
+        resultButton.alpha = 0.5
+        resultLabel.text = "Ты что, в будущем живешь?"
+    }
+    
+    func resetUIAfterIncorrectDate() {
+        resultButton.isEnabled = true
+        resultButton.alpha = 1
+        resultLabel.text = "Ты наслаждаешься жизнью уже ... дней!"
+    }
 }
 
 #Preview {

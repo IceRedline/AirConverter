@@ -14,15 +14,16 @@ class CalculatorViewController: UIViewController {
         label.text = "0"
         label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
         label.textAlignment = .right
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var copyButton: UIButton = {
         let button = UIButton()
-        let largeConfig = UIImage.SymbolConfiguration(pointSize: 22, weight: .light, scale: .unspecified)
-        let largeDocImage = UIImage(systemName: "doc.on.doc", withConfiguration: largeConfig)
-        button.setImage(UIImage(systemName: "doc.on.doc", withConfiguration: largeConfig), for: .normal)
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 22, weight: .light, scale: .unspecified)
+        let docImage = UIImage(systemName: "doc.on.doc", withConfiguration: imageConfig)
+        button.setImage(docImage, for: .normal)
         button.tintColor = .systemGray2
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -61,7 +62,6 @@ class CalculatorViewController: UIViewController {
         }
         set {
             numberLabel.text = String(newValue)
-            print(newValue, numberLabel.text)
         }
     }
     private var firstNumber = 0
@@ -77,7 +77,7 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
-        setupDisplay()
+        setupViews()
         copiedLabel.layer.masksToBounds = true
     }
     
@@ -128,7 +128,7 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    private func setupDisplay() {
+    private func setupViews() {
         view.addSubview(copyButton)
         view.addSubview(numberLabel)
         view.addSubview(copiedLabel)
