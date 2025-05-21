@@ -36,7 +36,7 @@ final class WordsCounterViewController: UIViewController {
     
     private let resultsStackView: UIStackView = {
         let stack = UIStackView()
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.spacing = Constants.stackViewSpacing
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -67,6 +67,7 @@ final class WordsCounterViewController: UIViewController {
         ]
         
         setupViews()
+        setupVStacks()
         activateConstraints()
     }
     
@@ -75,24 +76,76 @@ final class WordsCounterViewController: UIViewController {
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
         }
+        
     }
     
     private func activateConstraints() {
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 200),
-            textField.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: 15),
-            textField.trailingAnchor.constraint(equalTo:  view.trailingAnchor, constant: -15),
+            textField.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: Constants.defaultPadding),
+            textField.trailingAnchor.constraint(equalTo:  view.trailingAnchor, constant: -Constants.defaultPadding),
             textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             countButton.heightAnchor.constraint(equalToConstant: 50),
-            countButton.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: 15),
-            countButton.trailingAnchor.constraint(equalTo:  view.trailingAnchor, constant: -15),
+            countButton.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: Constants.defaultPadding),
+            countButton.trailingAnchor.constraint(equalTo:  view.trailingAnchor, constant: -Constants.defaultPadding),
             countButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            countButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20)
+            countButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20),
+            resultsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.defaultPadding),
+            resultsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.defaultPadding),
+            resultsStackView.topAnchor.constraint(equalTo: countButton.bottomAnchor, constant: 20)
         ])
+    }
+    
+    private func setupVStacks() {
+        for i in 0..<8 {
+            let hStack = UIStackView()
+            hStack.axis = .horizontal
+            hStack.spacing = Constants.stackViewSpacing
+            hStack.translatesAutoresizingMaskIntoConstraints = false
+            
+            let textLabelView = UIView()
+            let textLabel = UILabel()
+            
+            textLabel.text = labelsTitles[i]
+            textLabelView.addSubview(textLabel)
+            
+            let counterLabelView = UIView()
+            guard let counterLabel = counterLabelsArray?[i] else { return }
+            counterLabel.text = "0"
+            counterLabel.textAlignment = .right
+            counterLabelView.addSubview(counterLabel)
+            
+            [textLabelView, textLabel, counterLabelView, counterLabel].forEach { view in
+                view.translatesAutoresizingMaskIntoConstraints = false
+                view.backgroundColor = .systemGray6
+                view.layer.cornerRadius = 8
+            }
+            
+            NSLayoutConstraint.activate([
+                hStack.heightAnchor.constraint(equalToConstant: 35),
+                textLabel.leadingAnchor.constraint(equalTo: textLabelView.leadingAnchor, constant: 10),
+                textLabel.centerYAnchor.constraint(equalTo: textLabelView.centerYAnchor),
+                textLabelView.widthAnchor.constraint(equalToConstant: 280),
+                counterLabel.trailingAnchor.constraint(equalTo: counterLabelView.trailingAnchor, constant: -10),
+                counterLabel.centerYAnchor.constraint(equalTo: counterLabelView.centerYAnchor),
+            ])
+            
+            hStack.addArrangedSubview(textLabelView)
+            hStack.addArrangedSubview(counterLabelView)
+            
+           resultsStackView.addArrangedSubview(hStack)
+        }
+        view.addSubview(resultsStackView)
     }
     
     @objc private func countButtonTapped() {
         print("🥸")
     }
 }
+
+#Preview(body: {
+    let tabBar = MainTabBarController()
+    tabBar.selectedIndex = 3
+    return tabBar
+})
