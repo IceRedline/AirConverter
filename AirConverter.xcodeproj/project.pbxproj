@@ -33,6 +33,8 @@
 		99F9AF532DDE627500D759F2 /* WordsCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF522DDE627500D759F2 /* WordsCounterViewController.swift */; };
 		99F9AF562DDE64F700D759F2 /* WordsCounterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF552DDE64F700D759F2 /* WordsCounterPresenter.swift */; };
 		99F9AF732DDE6DBE00D759F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF722DDE6DBE00D759F2 /* Constants.swift */; };
+		99F9AF802DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF7F2DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift */; };
+		99F9AF822DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF812DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		99F9AF522DDE627500D759F2 /* WordsCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterViewController.swift; sourceTree = "<group>"; };
 		99F9AF552DDE64F700D759F2 /* WordsCounterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterPresenter.swift; sourceTree = "<group>"; };
 		99F9AF722DDE6DBE00D759F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		99F9AF7F2DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterPresenterProtocol.swift; sourceTree = "<group>"; };
+		99F9AF812DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,10 +245,28 @@
 		99F9AF542DDE628300D759F2 /* Words Counter */ = {
 			isa = PBXGroup;
 			children = (
-				99F9AF522DDE627500D759F2 /* WordsCounterViewController.swift */,
-				99F9AF552DDE64F700D759F2 /* WordsCounterPresenter.swift */,
+				99F9AF7D2DDE7D0B00D759F2 /* View */,
+				99F9AF7E2DDE7D1400D759F2 /* Presenter */,
 			);
 			path = "Words Counter";
+			sourceTree = "<group>";
+		};
+		99F9AF7D2DDE7D0B00D759F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99F9AF522DDE627500D759F2 /* WordsCounterViewController.swift */,
+				99F9AF812DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99F9AF7E2DDE7D1400D759F2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				99F9AF552DDE64F700D759F2 /* WordsCounterPresenter.swift */,
+				99F9AF7F2DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +347,9 @@
 				99D6A47F2DCFB091006F5F7C /* AppDelegate.swift in Sources */,
 				99D6A4942DCFC42F006F5F7C /* ConverterView.swift in Sources */,
 				99D6A4952DCFC42F006F5F7C /* ConverterViewModel.swift in Sources */,
+				99F9AF802DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift in Sources */,
 				99D6A4962DCFC42F006F5F7C /* CurrencyPicker.swift in Sources */,
+				99F9AF822DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift in Sources */,
 				99D6A4972DCFC42F006F5F7C /* MainView.swift in Sources */,
 				99D6A4982DCFC42F006F5F7C /* Currency.swift in Sources */,
 				99D6A4992DCFC42F006F5F7C /* MoexDataLoader.swift in Sources */,

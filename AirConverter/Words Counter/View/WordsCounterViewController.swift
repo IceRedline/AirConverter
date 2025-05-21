@@ -7,21 +7,21 @@
 
 import UIKit
 
-final class WordsCounterViewController: UIViewController {
+final class WordsCounterViewController: UIViewController, WordsCounterViewControllerProtocol {
     
-    private let textField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .systemGray6
-        textField.layer.cornerRadius = 16
-        textField.placeholder = "Введите текст"
+    var presenter: WordsCounterPresenterProtocol?
+    private let animationsEngine = Animations()
+    
+    private let textView: UITextView = {
+        let textView = UITextView()
+        textView.backgroundColor = .systemGray6
+        textView.layer.cornerRadius = 16
+        //textField.placeholder = "Введите текст"
         
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
-        textField.leftView = paddingView
-        textField.leftViewMode = .always
-        
-        //textField.borderStyle = .roundedRect
-        textField.clearButtonMode = .whileEditing
-        return textField
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textView.frame.height))
+        //textField.leftView = paddingView
+
+        return textView
     }()
     
     private let countButton: UIButton = {
@@ -30,7 +30,8 @@ final class WordsCounterViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .systemCyan
         button.layer.cornerRadius = 16
-        button.addTarget(self, action: #selector(countButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(countButtonTouchedDown(_:)), for: .touchDown)
+        button.addTarget(self, action: #selector(countButtonTouchedUpInside(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -42,11 +43,6 @@ final class WordsCounterViewController: UIViewController {
         return stack
     }()
     
-    let labelsTitles: [String] = [
-        "Всего слов", "Всего символов", "Всего символов без пробелов", "Пробелов",
-        "Всего кириллических символов", "Всего латинских символов","Всего цифр", "Остальных символов"
-    ]
-    
     private let wordsCounterLabel = UILabel()
     private let symbolsCounterLabel = UILabel()
     private let symbolsNoSpacesCounterLabel = UILabel()
@@ -56,10 +52,17 @@ final class WordsCounterViewController: UIViewController {
     private let numbersCounterLabel = UILabel()
     private let othersCounterLabel = UILabel()
     
+    let labelsTitles: [String] = [
+        "Всего слов", "Всего символов", "Всего символов без пробелов", "Пробелов",
+        "Всего кириллических символов", "Всего латинских символов","Всего цифр", "Остальных символов"
+    ]
+    
     private var counterLabelsArray: [UILabel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configure(WordsCounterPresenter())
         
         counterLabelsArray = [
             wordsCounterLabel, symbolsCounterLabel, symbolsNoSpacesCounterLabel, spacesCounterLabel,
@@ -71,8 +74,13 @@ final class WordsCounterViewController: UIViewController {
         activateConstraints()
     }
     
+    func configure(_ presenter: WordsCounterPresenterProtocol) {
+        self.presenter = presenter
+        self.presenter?.viewController = self
+    }
+    
     private func setupViews() {
-        [textField, countButton].forEach { view in
+        [textView, countButton].forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
         }
@@ -81,16 +89,16 @@ final class WordsCounterViewController: UIViewController {
     
     private func activateConstraints() {
         NSLayoutConstraint.activate([
-            textField.heightAnchor.constraint(equalToConstant: 200),
-            textField.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: Constants.defaultPadding),
-            textField.trailingAnchor.constraint(equalTo:  view.trailingAnchor, constant: -Constants.defaultPadding),
-            textField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            textView.heightAnchor.constraint(equalToConstant: 200),
+            textView.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: Constants.defaultPadding),
+            textView.trailingAnchor.constraint(equalTo:  view.trailingAnchor, constant: -Constants.defaultPadding),
+            textView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             countButton.heightAnchor.constraint(equalToConstant: 50),
             countButton.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: Constants.defaultPadding),
             countButton.trailingAnchor.constraint(equalTo:  view.trailingAnchor, constant: -Constants.defaultPadding),
             countButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            countButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20),
+            countButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 20),
             resultsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.defaultPadding),
             resultsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.defaultPadding),
             resultsStackView.topAnchor.constraint(equalTo: countButton.bottomAnchor, constant: 20)
@@ -139,8 +147,20 @@ final class WordsCounterViewController: UIViewController {
         view.addSubview(resultsStackView)
     }
     
-    @objc private func countButtonTapped() {
-        print("🥸")
+    @objc private func countButtonTouchedDown(_ sender: UIButton) {
+        animationsEngine.animateDownFloat(sender)
+    }
+    
+    @objc private func countButtonTouchedUpInside(_ sender: UIButton) {
+        animationsEngine.animateUpFloat(sender)
+        guard let text = textView.text else { return }
+        presenter?.count(text: text)
+    }
+    
+    func updateLabels(numbersArray: [Int]) {
+        for i in 0..<8 {
+            counterLabelsArray?[i].text = String(numbersArray[i])
+        }
     }
 }
 
