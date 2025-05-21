@@ -45,6 +45,14 @@ final class MainTabBarController: UITabBarController {
             vc: BirthdayCalculator()
         )
         
+        let wordsCounterVC = self.createNav(
+            title: "Анализ текста",
+            image: UIImage(systemName: "text.document")!,
+            leftButtonItem: nil,
+            rightButtonItem: nil,
+            vc: WordsCounterViewController()
+        )
+        
         let calculatorVC = self.createNav(
             title: "Калькулятор",
             image: UIImage(systemName: "plus.forwardslash.minus")!,
@@ -53,7 +61,7 @@ final class MainTabBarController: UITabBarController {
             vc: CalculatorViewController()
         )
         
-        self.setViewControllers([swiftUINavigationVC, lifeDaysOneVC, lifeDaysTwoVC, calculatorVC], animated: true)
+        self.setViewControllers([swiftUINavigationVC, lifeDaysOneVC, lifeDaysTwoVC, wordsCounterVC, calculatorVC], animated: true)
     }
     
     private func createNav(title: String, image: UIImage, leftButtonItem: UIBarButtonItem?, rightButtonItem: UIBarButtonItem?, vc: UIViewController) -> UINavigationController {
@@ -71,5 +79,7 @@ final class MainTabBarController: UITabBarController {
 }
 
 #Preview(body: {
-    MainTabBarController()
+    let tabBar = MainTabBarController()
+    tabBar.selectedIndex = 3
+    return tabBar
 })

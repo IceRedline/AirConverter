@@ -30,6 +30,9 @@
 		99E4FE542DD0FFDB00E4A66E /* BirthdayCalculatorPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE532DD0FFDB00E4A66E /* BirthdayCalculatorPresenterProtocol.swift */; };
 		99E4FE552DD0FFDB00E4A66E /* BirthdayCalculatorViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE522DD0FFDB00E4A66E /* BirthdayCalculatorViewControllerProtocol.swift */; };
 		99E4FE572DD100BB00E4A66E /* BirthdayCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE562DD100BB00E4A66E /* BirthdayCalculatorPresenter.swift */; };
+		99F9AF532DDE627500D759F2 /* WordsCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF522DDE627500D759F2 /* WordsCounterViewController.swift */; };
+		99F9AF562DDE64F700D759F2 /* WordsCounterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF552DDE64F700D759F2 /* WordsCounterPresenter.swift */; };
+		99F9AF732DDE6DBE00D759F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF722DDE6DBE00D759F2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		99E4FE522DD0FFDB00E4A66E /* BirthdayCalculatorViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCalculatorViewControllerProtocol.swift; sourceTree = "<group>"; };
 		99E4FE532DD0FFDB00E4A66E /* BirthdayCalculatorPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCalculatorPresenterProtocol.swift; sourceTree = "<group>"; };
 		99E4FE562DD100BB00E4A66E /* BirthdayCalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCalculatorPresenter.swift; sourceTree = "<group>"; };
+		99F9AF522DDE627500D759F2 /* WordsCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterViewController.swift; sourceTree = "<group>"; };
+		99F9AF552DDE64F700D759F2 /* WordsCounterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterPresenter.swift; sourceTree = "<group>"; };
+		99F9AF722DDE6DBE00D759F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				99CC7D012DD0BCA400352A16 /* Animations.swift */,
+				99F9AF722DDE6DBE00D759F2 /* Constants.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 				99D6A4852DCFB0EE006F5F7C /* LifeDays 1 */,
 				99E4FE4E2DD0ED0600E4A66E /* LifeDays 2 */,
 				99CC7D002DD0BBCF00352A16 /* Calculator */,
+				99F9AF542DDE628300D759F2 /* Words Counter */,
 				99D6A4712DCFB091006F5F7C /* Assets.xcassets */,
 				99D6A4722DCFB091006F5F7C /* Info.plist */,
 			);
@@ -230,6 +238,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		99F9AF542DDE628300D759F2 /* Words Counter */ = {
+			isa = PBXGroup;
+			children = (
+				99F9AF522DDE627500D759F2 /* WordsCounterViewController.swift */,
+				99F9AF552DDE64F700D759F2 /* WordsCounterPresenter.swift */,
+			);
+			path = "Words Counter";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,11 +336,14 @@
 				99E4FE4D2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift in Sources */,
 				99E4FE2E2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift in Sources */,
 				99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */,
+				99F9AF532DDE627500D759F2 /* WordsCounterViewController.swift in Sources */,
 				99D6A4872DCFB0EE006F5F7C /* BirthdayCalculator.swift in Sources */,
 				99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */,
 				99E4FE572DD100BB00E4A66E /* BirthdayCalculatorPresenter.swift in Sources */,
+				99F9AF562DDE64F700D759F2 /* WordsCounterPresenter.swift in Sources */,
 				99D6A4812DCFB091006F5F7C /* SceneDelegate.swift in Sources */,
 				99E4FE4B2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift in Sources */,
+				99F9AF732DDE6DBE00D759F2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
