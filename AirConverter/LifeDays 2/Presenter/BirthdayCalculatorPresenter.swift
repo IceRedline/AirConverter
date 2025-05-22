@@ -27,9 +27,10 @@ class BirthdayCalculatorPresenter: BirthdayCalculatorPresenterProtocol {
     }
     
     func calculateResult() {
-        let range = birthdayDate..<Date.now
-        let numberOfDays = range.formatted(.components(style: .wide, fields: [.day]).locale(Locale(identifier: "ru")))
-        let resultText = "Ты наслаждаешься жизнью уже \(numberOfDays)!"
+        let numberOfDays = abs(Calendar.current.dateComponents([.day], from: Date(), to: birthdayDate).day ?? 0000)
+        let localizedNumberOfDays = String.localizedStringWithFormat(NSLocalizedString("numberOfDays", comment: ""), numberOfDays)
+        
+        let resultText = NSLocalizedString("defaultBirthdayText", comment: "") + String(localizedNumberOfDays) + "!"
         
         view?.updateResultLabel(with: resultText)
     }

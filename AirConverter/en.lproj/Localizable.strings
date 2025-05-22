@@ -12,11 +12,11 @@
 "firstDate" = "First date";
 "secondDate" = "Second date";
 "count" = "Count";
-"lifaDays" = "Life days";
+"lifeDays" = "Life days";
 "enjoyEveryDay" = "Enjoy every day of your life!";
 "...days" = "... days";
 "chooseYourBirthday" = "Choose your birthday:";
-"defaultBirthdayText" = "You're enjoying your life for ... days already!";
+"defaultBirthdayText" = "You've been enjoying your life for ";
 "areYouLivingInTheFuture" = "Are you living in the future?";
 "textAnalysis" = "Text analysis";
 "totalWords" = "Total words";

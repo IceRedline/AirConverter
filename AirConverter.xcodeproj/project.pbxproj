@@ -36,6 +36,7 @@
 		99F9AF802DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF7F2DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift */; };
 		99F9AF822DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9AF812DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift */; };
 		99F9AFB52DDF445900D759F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99F9AFB32DDF445900D759F2 /* Localizable.strings */; };
+		99F9AFBA2DDF60F100D759F2 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 99F9AFB82DDF60F100D759F2 /* Localizable.stringsdict */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		99F9AFB42DDF445900D759F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		99F9AFB62DDF446A00D759F2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		99F9AFB72DDF446A00D759F2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		99F9AFB92DDF60F100D759F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		99F9AFBB2DDF60FF00D759F2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 				99F9AF542DDE628300D759F2 /* Words Counter */,
 				99CC7D002DD0BBCF00352A16 /* Calculator */,
 				99D6A4712DCFB091006F5F7C /* Assets.xcassets */,
+				99F9AFB82DDF60F100D759F2 /* Localizable.stringsdict */,
 				99F9AFB32DDF445900D759F2 /* Localizable.strings */,
 				99D6A4722DCFB091006F5F7C /* Info.plist */,
 			);
@@ -199,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				99E4FE2D2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift */,
+				99E4FE4C2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -207,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				99E4FE4A2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift */,
-				99E4FE4C2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				99E4FE522DD0FFDB00E4A66E /* BirthdayCalculatorViewControllerProtocol.swift */,
-				99E4FE532DD0FFDB00E4A66E /* BirthdayCalculatorPresenterProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				99E4FE562DD100BB00E4A66E /* BirthdayCalculatorPresenter.swift */,
+				99E4FE532DD0FFDB00E4A66E /* BirthdayCalculatorPresenterProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -337,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */,
+				99F9AFBA2DDF60F100D759F2 /* Localizable.stringsdict in Resources */,
 				99F9AFB52DDF445900D759F2 /* Localizable.strings in Resources */,
 				99D6A47D2DCFB091006F5F7C /* LaunchScreen.storyboard in Resources */,
 			);
@@ -397,6 +402,15 @@
 				99F9AFB72DDF446A00D759F2 /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		99F9AFB82DDF60F100D759F2 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99F9AFB92DDF60F100D759F2 /* en */,
+				99F9AFBB2DDF60FF00D759F2 /* ru */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

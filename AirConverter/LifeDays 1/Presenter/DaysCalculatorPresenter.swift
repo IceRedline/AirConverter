@@ -25,7 +25,7 @@ class DaysCalculatorPresenter: DaysCalculatorPresenterProtocol {
     
     func calculateResult() {
         difference = abs(Calendar.current.dateComponents([.day], from: firstDate, to: secondDate).day ?? 0000) 
-        let resultText = "\(difference) дней"
+        let resultText = String.localizedStringWithFormat(NSLocalizedString("numberOfDays", comment: ""), difference)
         
         view?.updateResultLabel(with: resultText)
     }

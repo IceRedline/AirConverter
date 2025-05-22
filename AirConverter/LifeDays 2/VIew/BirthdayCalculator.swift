@@ -11,6 +11,8 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     
     var presenter: BirthdayCalculatorPresenterProtocol?
     
+    let defaultText = NSLocalizedString("defaultBirthdayText", comment: "") + "... " + NSLocalizedString("days", comment: "") + "!"
+    
     let lifeDaysLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("enjoyEveryDay", comment: "")
@@ -47,7 +49,6 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     
     var resultLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("defaultBirthdayText", comment: "")
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -66,6 +67,7 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     }
     
     private func setupUI() {
+        resultLabel.text = defaultText
         [lifeDaysLabel, birthdayLabel, datePickerWheels, resultButton, resultLabel].forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
@@ -83,7 +85,7 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
             resultButton.heightAnchor.constraint(equalToConstant: 45),
             resultButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             resultButton.topAnchor.constraint(equalTo: datePickerWheels.bottomAnchor, constant: 40),
-            resultLabel.widthAnchor.constraint(equalToConstant: 300),
+            resultLabel.widthAnchor.constraint(equalToConstant: 200),
             resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             resultLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor, constant: 30)
         ])
@@ -110,7 +112,7 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     func resetUIAfterIncorrectDate() {
         resultButton.isEnabled = true
         resultButton.alpha = 1
-        resultLabel.text = NSLocalizedString("defaultBirthdayText", comment: "")
+        resultLabel.text = defaultText
     }
 }
 

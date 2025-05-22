@@ -5,9 +5,9 @@
 //  Created by Артем Табенский on 21.05.2025.
 //
 
-import Foundation
+import UIKit
 
-final class WordsCounterPresenter: WordsCounterPresenterProtocol {
+final class WordsCounterPresenter: NSObject, WordsCounterPresenterProtocol {
     
     var viewController: WordsCounterViewControllerProtocol?
     
@@ -23,6 +23,10 @@ final class WordsCounterPresenter: WordsCounterPresenterProtocol {
     var latinCount: Int = 0
     var numbersCount: Int = 0
     var othersCount: Int = 0
+    
+    func viewDidLoad() {
+        viewController?.textView.delegate = self
+    }
     
     func count(text: String) {
         wordsCount = text.split(separator: " ").count
@@ -43,4 +47,11 @@ final class WordsCounterPresenter: WordsCounterPresenterProtocol {
         viewController?.updateLabels(numbersArray: array)
     }
     
+}
+
+extension WordsCounterPresenter: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+        textView.textColor = .white
+    }
 }

@@ -12,11 +12,12 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
     var presenter: WordsCounterPresenterProtocol?
     private let animationsEngine = Animations()
     
-    private let textView: UITextView = {
+    let textView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .systemGray6
         textView.layer.cornerRadius = 16
-        //textView.text = "Введите текст"
+        textView.text = "  Введите текст"
+        textView.textColor = .gray
         
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textView.frame.height))
         //textField.leftView = paddingView
@@ -62,6 +63,7 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
         super.viewDidLoad()
         
         configure(WordsCounterPresenter())
+        presenter?.viewDidLoad()
         
         counterLabelsArray = [
             wordsCounterLabel, symbolsCounterLabel, symbolsNoSpacesCounterLabel, spacesCounterLabel,

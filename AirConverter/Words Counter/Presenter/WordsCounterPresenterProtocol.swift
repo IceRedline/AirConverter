@@ -11,5 +11,6 @@ protocol WordsCounterPresenterProtocol {
     
     var viewController: WordsCounterViewControllerProtocol? { get set }
     
+    func viewDidLoad()
     func count(text: String)
 }
