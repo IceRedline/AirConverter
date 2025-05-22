@@ -18,10 +18,6 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
         textView.layer.cornerRadius = 16
         textView.text = "  Введите текст"
         textView.textColor = .gray
-        
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textView.frame.height))
-        //textField.leftView = paddingView
-
         return textView
     }()
     
@@ -85,6 +81,9 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
         }
+        let preventLargeTitleCollapseView = UIView()
+        view.addSubview(preventLargeTitleCollapseView)
+        view.sendSubviewToBack(preventLargeTitleCollapseView)
         
     }
     
@@ -143,7 +142,7 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
             hStack.addArrangedSubview(textLabelView)
             hStack.addArrangedSubview(counterLabelView)
             
-           resultsStackView.addArrangedSubview(hStack)
+            resultsStackView.addArrangedSubview(hStack)
         }
         view.addSubview(resultsStackView)
     }
@@ -154,6 +153,7 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
     
     @objc private func countButtonTouchedUpInside(_ sender: UIButton) {
         animationsEngine.animateUpFloat(sender)
+        textView.resignFirstResponder()
         guard let text = textView.text else { return }
         presenter?.count(text: text)
     }
