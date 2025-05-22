@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WordsCounterViewControllerProtocol {
-    
+
     var presenter: WordsCounterPresenterProtocol? { get set }
     
     func updateLabels(numbersArray: [Int])

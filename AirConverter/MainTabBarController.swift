@@ -22,7 +22,7 @@ final class MainTabBarController: UITabBarController {
         let hostingVC = UIHostingController(rootView: converterView)
         
         let swiftUINavigationVC = createNav(
-            title: "Конвертер",
+            title: NSLocalizedString("converter", comment: ""),
             image: UIImage(systemName: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
@@ -30,7 +30,7 @@ final class MainTabBarController: UITabBarController {
         )
         
         let lifeDaysOneVC = self.createNav(
-            title: "Калькулятор дней",
+            title: NSLocalizedString("daysCalculator", comment: ""),
             image: UIImage(systemName: "calendar")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
@@ -38,7 +38,7 @@ final class MainTabBarController: UITabBarController {
         )
         
         let lifeDaysTwoVC = self.createNav(
-            title: "Дни жизни",
+            title: NSLocalizedString("lifeDays", comment: ""),
             image: UIImage(systemName: "birthday.cake")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
@@ -46,7 +46,7 @@ final class MainTabBarController: UITabBarController {
         )
         
         let wordsCounterVC = self.createNav(
-            title: "Анализ текста",
+            title: NSLocalizedString("textAnalysis", comment: ""),
             image: UIImage(systemName: "text.document")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
@@ -54,7 +54,7 @@ final class MainTabBarController: UITabBarController {
         )
         
         let calculatorVC = self.createNav(
-            title: "Калькулятор",
+            title: NSLocalizedString("calculator", comment: ""),
             image: UIImage(systemName: "plus.forwardslash.minus")!,
             leftButtonItem: nil,
             rightButtonItem: nil,

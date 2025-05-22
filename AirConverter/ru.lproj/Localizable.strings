@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  AirConverter
+
+  Created by Артем Табенский on 22.05.2025.
+  
+*/
+
+"converter" = "Конвертер";
+"daysCalculator" = "Калькулятор дней";
+"howManyDays" = "Сколько дней прошло между двумя датами";
+"firstDate" = "Первая дата";
+"secondDate" = "Вторая дата";
+"count" = "Посчитать";
+"lifeDays" = "Дни жизни";
+"enjoyEveryDay" = "Радуйся каждому дню!";
+"...days" = "... дней";
+"chooseYourBirthday" = "Выбери свой день рождения:";
+"defaultBirthdayText" = "Ты наслаждаешься жизнью уже ... дней!";
+"areYouLivingInTheFuture" = "Ты что, в будущем живешь?";
+"textAnalysis" = "Анализ текста";
+"totalWords" = "Всего слов";
+"totalSymbols" = "Всего символов";
+"totalSymbolsNoSpaces" = "Всего символов без пробелов";
+"spaces" = "Пробелов";
+"totalCyrillic" = "Всего кириллических символов";
+"totalLatin" = "Всего латинских символов";
+"totalNumbers" = "Всего цифр";
+"otherSymbols" = "Остальных символов";
+"calculator" = "Калькулятор";
+"copied" = "Скопировано в буфер обмена!";

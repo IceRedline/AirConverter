@@ -33,7 +33,7 @@ class CalculatorViewController: UIViewController {
     
     private let copiedLabel: UILabel = {
         let label = UILabel()
-        label.text = "Скопировано в буфер обмена!"
+        label.text = NSLocalizedString("copied", comment: "")
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.textAlignment = .center
         label.textColor = .white

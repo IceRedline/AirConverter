@@ -16,7 +16,7 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
         let textView = UITextView()
         textView.backgroundColor = .systemGray6
         textView.layer.cornerRadius = 16
-        //textField.placeholder = "Введите текст"
+        //textView.text = "Введите текст"
         
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textView.frame.height))
         //textField.leftView = paddingView
@@ -26,11 +26,12 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
     
     private let countButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Посчитать", for: .normal)
+        button.setTitle(NSLocalizedString("count", comment: ""), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .systemCyan
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(countButtonTouchedDown(_:)), for: .touchDown)
+        button.addTarget(self, action: #selector(countButtonTouchedUpInside(_:)), for: .touchUpInside)
         button.addTarget(self, action: #selector(countButtonTouchedUpInside(_:)), for: .touchUpInside)
         return button
     }()
@@ -52,9 +53,7 @@ final class WordsCounterViewController: UIViewController, WordsCounterViewContro
     private let numbersCounterLabel = UILabel()
     private let othersCounterLabel = UILabel()
     
-    let labelsTitles: [String] = [
-        "Всего слов", "Всего символов", "Всего символов без пробелов", "Пробелов",
-        "Всего кириллических символов", "Всего латинских символов","Всего цифр", "Остальных символов"
+    let labelsTitles: [String] = [NSLocalizedString("totalWords", comment: ""), NSLocalizedString("totalSymbols", comment: ""), NSLocalizedString("totalSymbolsNoSpaces", comment: ""), NSLocalizedString("spaces", comment: ""), NSLocalizedString("totalCyrillic", comment: ""), NSLocalizedString("totalLatin", comment: ""), NSLocalizedString("totalNumbers", comment: ""), NSLocalizedString("otherSymbols", comment: ""),
     ]
     
     private var counterLabelsArray: [UILabel]?

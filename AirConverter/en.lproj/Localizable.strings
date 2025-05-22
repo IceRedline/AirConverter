@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  AirConverter
+
+  Created by Артем Табенский on 22.05.2025.
+  
+*/
+
+"converter" = "Converter";
+"daysCalculator" = "Days calculator";
+"howManyDays" = "How many days passed between two dates";
+"firstDate" = "First date";
+"secondDate" = "Second date";
+"count" = "Count";
+"lifaDays" = "Life days";
+"enjoyEveryDay" = "Enjoy every day of your life!";
+"...days" = "... days";
+"chooseYourBirthday" = "Choose your birthday:";
+"defaultBirthdayText" = "You're enjoying your life for ... days already!";
+"areYouLivingInTheFuture" = "Are you living in the future?";
+"textAnalysis" = "Text analysis";
+"totalWords" = "Total words";
+"totalSymbols" = "Total symbols";
+"totalSymbolsNoSpaces" = "Total symbols without spaces";
+"spaces" = "Spaces";
+"totalCyrillic" = "Total cyrillic symbols";
+"totalLatin" = "Total latin symbols";
+"totalNumbers" = "Total numbers";
+"otherSymbols" = "Other symbols";
+"calculator" = "Calculator";
+"copied" = "Copied to clipboard!";

@@ -13,7 +13,7 @@ class DaysCalculatorViewController: UIViewController, DaysCalculatorViewControll
     
     let lifeDaysLabel: UILabel = {
         let label = UILabel()
-        label.text = "Сколько дней прошло  между двумя датами"
+        label.text = NSLocalizedString("howManyDays", comment: "")
         label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -23,7 +23,7 @@ class DaysCalculatorViewController: UIViewController, DaysCalculatorViewControll
     
     let firstDateLabel: UILabel = {
         let label = UILabel()
-        label.text = "Первая дата"
+        label.text = NSLocalizedString("firstDate", comment: "")
         label.font = UIFont.systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -38,7 +38,7 @@ class DaysCalculatorViewController: UIViewController, DaysCalculatorViewControll
     
     let secondDateLabel: UILabel = {
         let label = UILabel()
-        label.text = "Вторая дата"
+        label.text = NSLocalizedString("secondDate", comment: "")
         label.font = UIFont.systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -53,7 +53,7 @@ class DaysCalculatorViewController: UIViewController, DaysCalculatorViewControll
     
     lazy var resultButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Посчитать", for: .normal)
+        button.setTitle(NSLocalizedString("count", comment: ""), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         button.backgroundColor = .systemCyan
         button.layer.cornerRadius = 12
@@ -63,7 +63,7 @@ class DaysCalculatorViewController: UIViewController, DaysCalculatorViewControll
     
     var resultLabel: UILabel = {
         let label = UILabel()
-        label.text = "... дней"
+        label.text = NSLocalizedString("...days", comment: "")
         label.font = UIFont.systemFont(ofSize: 46, weight: .bold)
         label.textAlignment = .center
         return label

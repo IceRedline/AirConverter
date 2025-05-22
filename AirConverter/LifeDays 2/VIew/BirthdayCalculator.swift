@@ -13,7 +13,7 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     
     let lifeDaysLabel: UILabel = {
         let label = UILabel()
-        label.text = "Радуйся каждому дню!"
+        label.text = NSLocalizedString("enjoyEveryDay", comment: "")
         label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -22,7 +22,7 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     
     let birthdayLabel: UILabel = {
         let label = UILabel()
-        label.text = "Выбери свой день рождения:"
+        label.text = NSLocalizedString("chooseYourBirthday", comment: "")
         label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
@@ -37,7 +37,7 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     
     lazy var resultButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Посчитать", for: .normal)
+        button.setTitle(NSLocalizedString("count", comment: ""), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 12
@@ -47,7 +47,7 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     
     var resultLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ты наслаждаешься жизнью уже ... дней!"
+        label.text = NSLocalizedString("defaultBirthdayText", comment: "")
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -104,13 +104,13 @@ class BirthdayCalculator: UIViewController, BirthdayCalculatorViewControllerProt
     func showIncorrectDateLabel() {
         resultButton.isEnabled = false
         resultButton.alpha = 0.5
-        resultLabel.text = "Ты что, в будущем живешь?"
+        resultLabel.text = NSLocalizedString("areYouLivingInTheFuture", comment: "")
     }
     
     func resetUIAfterIncorrectDate() {
         resultButton.isEnabled = true
         resultButton.alpha = 1
-        resultLabel.text = "Ты наслаждаешься жизнью уже ... дней!"
+        resultLabel.text = NSLocalizedString("defaultBirthdayText", comment: "")
     }
 }
 
