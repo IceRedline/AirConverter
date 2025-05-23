@@ -20,6 +20,7 @@ Shows how many days have passed since your birthday.
 
 Supports basic arithmetic operations: addition, subtraction, multiplication and division.
 
-![AirConverter Preview](https://github.com/user-attachments/assets/1fa73fda-2c0d-42e2-bba5-97131f3ce8a7)
+![AirConverter Preview](https://github.com/user-attachments/assets/9f92b882-2249-4219-9e4b-82b495e997bf)
+
 
 > UIKit, SwiftUI, MVP, MVVM
