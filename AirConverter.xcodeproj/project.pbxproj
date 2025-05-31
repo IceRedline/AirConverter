@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		997387742DEB4E1900A9B2B4 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997387732DEB4E1900A9B2B4 /* CurrencyModel.swift */; };
+		997387852DEB737700A9B2B4 /* CurrencyRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997387842DEB737700A9B2B4 /* CurrencyRates.swift */; };
+		997387872DEB73A500A9B2B4 /* CurrencyWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997387862DEB73A500A9B2B4 /* CurrencyWebService.swift */; };
 		997D2BEA2DE5853C00035942 /* ConverterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2BE92DE5853C00035942 /* ConverterPresenterProtocol.swift */; };
 		997D2BEC2DE5855600035942 /* ConverterViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2BEB2DE5855600035942 /* ConverterViewControllerProtocol.swift */; };
 		997D2C3B2DE58DBB00035942 /* ConverterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2C3A2DE58DBB00035942 /* ConverterTableViewCell.swift */; };
@@ -22,7 +24,6 @@
 		99D6A4872DCFB0EE006F5F7C /* BirthdayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4842DCFB0EE006F5F7C /* BirthdayCalculator.swift */; };
 		99D6A4942DCFC42F006F5F7C /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A48D2DCFC42F006F5F7C /* ConverterViewController.swift */; };
 		99D6A4952DCFC42F006F5F7C /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4922DCFC42F006F5F7C /* ConverterPresenter.swift */; };
-		99D6A49B2DCFC42F006F5F7C /* ConverterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */; };
 		99E4FE2E2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE2D2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift */; };
 		99E4FE4B2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE4A2DD0EC2600E4A66E /* DaysCalculatorViewControllerProtocol.swift */; };
 		99E4FE4D2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E4FE4C2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		997387732DEB4E1900A9B2B4 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		997387842DEB737700A9B2B4 /* CurrencyRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRates.swift; sourceTree = "<group>"; };
+		997387862DEB73A500A9B2B4 /* CurrencyWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyWebService.swift; sourceTree = "<group>"; };
 		997D2BE92DE5853C00035942 /* ConverterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPresenterProtocol.swift; sourceTree = "<group>"; };
 		997D2BEB2DE5855600035942 /* ConverterViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewControllerProtocol.swift; sourceTree = "<group>"; };
 		997D2C3A2DE58DBB00035942 /* ConverterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTableViewCell.swift; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		99D6A4832DCFB0EE006F5F7C /* DaysCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCalculatorViewController.swift; sourceTree = "<group>"; };
 		99D6A4842DCFB0EE006F5F7C /* BirthdayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCalculator.swift; sourceTree = "<group>"; };
-		99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterModel.swift; sourceTree = "<group>"; };
 		99D6A48D2DCFC42F006F5F7C /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		99D6A4922DCFC42F006F5F7C /* ConverterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
 		99E4FE2D2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCalculatorPresenter.swift; sourceTree = "<group>"; };
@@ -163,8 +165,9 @@
 		99D6A48C2DCFC42F006F5F7C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				99D6A4892DCFC42F006F5F7C /* ConverterModel.swift */,
 				997387732DEB4E1900A9B2B4 /* CurrencyModel.swift */,
+				997387842DEB737700A9B2B4 /* CurrencyRates.swift */,
+				997387862DEB73A500A9B2B4 /* CurrencyWebService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,15 +360,16 @@
 				99D6A4942DCFC42F006F5F7C /* ConverterViewController.swift in Sources */,
 				99D6A4952DCFC42F006F5F7C /* ConverterPresenter.swift in Sources */,
 				99F9AF802DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift in Sources */,
+				997387852DEB737700A9B2B4 /* CurrencyRates.swift in Sources */,
 				997D2BEC2DE5855600035942 /* ConverterViewControllerProtocol.swift in Sources */,
 				997D2BEA2DE5853C00035942 /* ConverterPresenterProtocol.swift in Sources */,
 				99F9AF822DDE7D5B00D759F2 /* WordsCounterViewControllerProtocol.swift in Sources */,
-				99D6A49B2DCFC42F006F5F7C /* ConverterModel.swift in Sources */,
 				997D2C3B2DE58DBB00035942 /* ConverterTableViewCell.swift in Sources */,
 				99D6A4802DCFB091006F5F7C /* MainTabBarController.swift in Sources */,
 				99D6A4862DCFB0EE006F5F7C /* DaysCalculatorViewController.swift in Sources */,
 				99E4FE4D2DD0EC5C00E4A66E /* DaysCalculatorPresenterProtocol 2.swift in Sources */,
 				99E4FE2E2DD0EBA900E4A66E /* DaysCalculatorPresenter.swift in Sources */,
+				997387872DEB73A500A9B2B4 /* CurrencyWebService.swift in Sources */,
 				99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */,
 				99F9AF532DDE627500D759F2 /* WordsCounterViewController.swift in Sources */,
 				99D6A4872DCFB0EE006F5F7C /* BirthdayCalculator.swift in Sources */,

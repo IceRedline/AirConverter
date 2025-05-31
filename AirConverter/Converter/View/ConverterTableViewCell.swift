@@ -39,15 +39,6 @@ class ConverterTableViewCell: UITableViewCell {
         amountTextField.textColor = .systemBlue
         amountTextField.textAlignment = .right
         amountTextField.font = UIFont.systemFont(ofSize: 28)
-        
-        /* Default parameters
-        currencyFlagLabel.backgroundColor = .systemGray5
-        currencyFlagLabel.text = "🇨🇳"
-        currencyNameButton.backgroundColor = .systemGray5
-        currencyNameButton.setTitle("CNY", for: .normal)
-        amountTextField.backgroundColor = .systemGray5
-        amountTextField.text = "0"
-         */
     }
     
     private func setupConstraints() {
@@ -59,7 +50,7 @@ class ConverterTableViewCell: UITableViewCell {
             currencyNameButton.widthAnchor.constraint(equalToConstant: 50),
             currencyNameButton.heightAnchor.constraint(equalToConstant: 28),
             currencyNameButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.defaultPadding),
-            currencyNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 22),
+            currencyNameButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             amountTextField.widthAnchor.constraint(equalToConstant: 150),
             amountTextField.heightAnchor.constraint(equalToConstant: 35),
             amountTextField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
@@ -67,10 +58,10 @@ class ConverterTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(currency: CurrencyModel, amount: Int) {
+    func configure(currency: CurrencyModel) {
         currencyNameButton.setTitle(currency.name, for: .normal)
         currencyFlagLabel.text = currency.flag
-        amountTextField.text = String(amount)
+        amountTextField.text = String(currency.amount)
     }
     
     @objc func currencyNameButtonTapped(_ sender: UIButton) {

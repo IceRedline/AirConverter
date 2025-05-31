@@ -11,7 +11,7 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
     
     var presenter: ConverterPresenterProtocol?
     
-    let tableView = UITableView()
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,7 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
         setup(presenter: ConverterPresenter())
         setupViews()
         setupConstraints()
+        presenter?.viewDidLoad()
     }
     
     private func setup(presenter: ConverterPresenterProtocol) {

@@ -10,4 +10,5 @@ import Foundation
 struct CurrencyModel {
     let name: String
     let flag: String
+    var amount: Double
 }

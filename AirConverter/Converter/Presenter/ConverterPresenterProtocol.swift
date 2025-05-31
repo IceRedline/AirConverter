@@ -10,4 +10,6 @@ import UIKit
 protocol ConverterPresenterProtocol: UITableViewDelegate, UITableViewDataSource {
     
     var view: ConverterViewControllerProtocol? { get set }
+    
+    func viewDidLoad()
 }
