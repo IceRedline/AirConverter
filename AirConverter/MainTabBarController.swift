@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 final class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
@@ -17,16 +16,12 @@ final class MainTabBarController: UITabBarController {
     
     private func setupTabs() {
         
-        let converterViewModel = ConverterViewModel()
-        let converterView = ConverterView().environmentObject(converterViewModel)
-        let hostingVC = UIHostingController(rootView: converterView)
-        
         let swiftUINavigationVC = createNav(
             title: NSLocalizedString("converter", comment: ""),
             image: UIImage(systemName: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90")!,
             leftButtonItem: nil,
             rightButtonItem: nil,
-            vc: hostingVC
+            vc: ConverterViewController()
         )
         
         let lifeDaysOneVC = self.createNav(
@@ -80,6 +75,6 @@ final class MainTabBarController: UITabBarController {
 
 #Preview(body: {
     let tabBar = MainTabBarController()
-    tabBar.selectedIndex = 3
+    tabBar.selectedIndex = 0
     return tabBar
 })
