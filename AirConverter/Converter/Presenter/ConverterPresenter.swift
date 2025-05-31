@@ -21,34 +21,39 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
     
     var fromCurrency: CurrencyModel = CurrencyModel(name: "CNY", flag: "🇨🇳", amount: 0) {
         didSet {
-            calculate()
+            
         }
     }
     var toCurrency: CurrencyModel = CurrencyModel(name: "RUB", flag: "🇷🇺", amount: 0) {
         didSet {
-            //calculate(standart: true)
+            
         }
     }
     
     var rates: [String : Double]?
+    var inverseRates: [String : Double]?
     
     func viewDidLoad() {
         currencyWebService.fetchRates(for: fromCurrency.name.lowercased()) { resultRates in
             self.rates = resultRates
         }
+        currencyWebService.fetchRates(for: toCurrency.name.lowercased()) { resultRates in
+            self.inverseRates = resultRates
+        }
     }
     
     @objc func topTextFieldChanged(_ sender: UITextField, rowNumber: Int) {
-        if sender.text != nil {
+        if sender.text != ""  {
             fromCurrency.amount = Double(sender.text!)!
         }
-        
+        calculate(standart: true)
     }
     
     @objc func bottomTextFieldChanged(_ sender: UITextField, rowNumber: Int) {
-        if sender.text != nil  {
+        if sender.text != ""  {
             toCurrency.amount = Double(sender.text!)!
         }
+        calculate(standart: false)
     }
     
     func topCurrencyChanged() {
@@ -59,12 +64,22 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         
     }
     
-    func calculate() {
-        guard let rate = rates?[toCurrency.name.lowercased()] else { return }
-        let result = Double(fromCurrency.amount * rate).rounded()
-        toCurrency.amount = result
+    func calculate(standart: Bool) {
+        let indexPath: IndexPath
+        if standart {
+            guard let rate = rates?[toCurrency.name.lowercased()] else { return }
+            let result = Double(fromCurrency.amount * rate).rounded()
+            toCurrency.amount = result
+            
+            indexPath = IndexPath(row: 1, section: 0)
+        } else {
+            guard let rate = inverseRates?[fromCurrency.name.lowercased()] else { return }
+            let result = Double(toCurrency.amount * rate).rounded()
+            fromCurrency.amount = result
+            
+            indexPath = IndexPath(row: 0, section: 0)
+        }
         
-        let indexPath = IndexPath(row: 1, section: 0)
         view?.tableView.reloadRows(at: [indexPath], with: .none)
     }
     
