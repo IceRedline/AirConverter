@@ -19,27 +19,14 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         CurrencyModel(name: "CNY", flag: "🇨🇳", amount: 0),
     ]
     
-    var fromCurrency: CurrencyModel = CurrencyModel(name: "CNY", flag: "🇨🇳", amount: 0) {
-        didSet {
-            
-        }
-    }
-    var toCurrency: CurrencyModel = CurrencyModel(name: "RUB", flag: "🇷🇺", amount: 0) {
-        didSet {
-            
-        }
-    }
+    var fromCurrency: CurrencyModel = CurrencyModel(name: "CNY", flag: "🇨🇳", amount: 0)
+    var toCurrency: CurrencyModel = CurrencyModel(name: "RUB", flag: "🇷🇺", amount: 0)
     
     var rates: [String : Double]?
     var inverseRates: [String : Double]?
     
     func viewDidLoad() {
-        currencyWebService.fetchRates(for: fromCurrency.name.lowercased()) { resultRates in
-            self.rates = resultRates
-        }
-        currencyWebService.fetchRates(for: toCurrency.name.lowercased()) { resultRates in
-            self.inverseRates = resultRates
-        }
+        loadExchangeRates()
     }
     
     @objc func topTextFieldChanged(_ sender: UITextField, rowNumber: Int) {
@@ -56,12 +43,23 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         calculate(standart: false)
     }
     
-    func topCurrencyChanged() {
-        
+    @objc func сurrencyButtonTapped() {
+        view?.presentSheet(currentCurrencies: [fromCurrency.name, toCurrency.name])
     }
     
-    func bottomCurrencyChanged() {
-        
+    func currenciesChanged(fromCurrency: String, toCurrency: String) {
+        self.fromCurrency = currencies.first(where: {$0.name == fromCurrency})!
+        self.toCurrency = currencies.first(where: {$0.name == toCurrency})!
+        view?.tableView.reloadData()
+    }
+    
+    func loadExchangeRates() {
+        currencyWebService.fetchRates(for: fromCurrency.name.lowercased()) { resultRates in
+            self.rates = resultRates
+        }
+        currencyWebService.fetchRates(for: toCurrency.name.lowercased()) { resultRates in
+            self.inverseRates = resultRates
+        }
     }
     
     func calculate(standart: Bool) {
@@ -83,6 +81,8 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         view?.tableView.reloadRows(at: [indexPath], with: .none)
     }
     
+    
+    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,6 +103,7 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
             cell.amountTextField.addTarget(self, action: #selector(bottomTextFieldChanged), for: .editingChanged)
         default: fatalError("ConverterPresenter - cellForRowAt: Не удалось распознать ряд")
         }
+        cell.currencyNameButton.addTarget(self, action: #selector(сurrencyButtonTapped), for: .touchUpInside)
         
         return cell
     }
@@ -112,4 +113,5 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
 }

@@ -23,6 +23,8 @@ class CurrencyWebService {
             return nil
         }
         
+        print("Запрошен URL: \(url)")
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         return request

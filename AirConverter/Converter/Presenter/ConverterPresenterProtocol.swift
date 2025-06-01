@@ -12,4 +12,6 @@ protocol ConverterPresenterProtocol: UITableViewDelegate, UITableViewDataSource 
     var view: ConverterViewControllerProtocol? { get set }
     
     func viewDidLoad()
+    func currenciesChanged(fromCurrency: String, toCurrency: String)
+    func loadExchangeRates()
 }

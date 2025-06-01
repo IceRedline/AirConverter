@@ -12,4 +12,6 @@ protocol ConverterViewControllerProtocol {
     var presenter: ConverterPresenterProtocol? { get }
     
     var tableView: UITableView { get }
+    
+    func presentSheet(currentCurrencies: [String])
 }

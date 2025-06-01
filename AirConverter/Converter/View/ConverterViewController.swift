@@ -29,7 +29,6 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
     
     private func setupViews() {
         tableView.register(ConverterTableViewCell.self, forCellReuseIdentifier: "ConverterTableViewCell")
-        tableView.backgroundColor = .red
         tableView.layer.cornerRadius = 16
         tableView.delegate = presenter
         tableView.dataSource = presenter
@@ -44,5 +43,23 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.defaultPadding),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.defaultPadding),
         ])
+    }
+    
+    func presentSheet(currentCurrencies: [String]) {
+        let controller = SheetViewController(startCurrencies: currentCurrencies)
+        if let sheetController = controller.sheetPresentationController {
+            sheetController.detents = [.medium(), .large()]
+            sheetController.prefersGrabberVisible = true
+        }
+        
+        controller.onCurrencySelected = { [weak self] currencyFrom, currencyTo in
+            self?.presenter?.currenciesChanged(fromCurrency: currencyFrom, toCurrency: currencyTo)
+        }
+        
+        controller.onDismiss = { [weak self] in
+            self?.presenter?.loadExchangeRates()
+        }
+        
+        present(controller, animated: true)
     }
 }
