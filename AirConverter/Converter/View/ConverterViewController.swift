@@ -113,7 +113,8 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
     }
     
     func updateLabel(fromCurrency: String, toCurrency: String) {
-        chartLabel.text = "\(fromCurrency) - \(toCurrency) chart (10 days)"
+        let localizedFormatString = NSLocalizedString("chart", comment: "")
+        chartLabel.text = String(format: localizedFormatString, "\(fromCurrency) - \(toCurrency)") + " (" + String.localizedStringWithFormat(NSLocalizedString("numberOfDays", comment: ""), 10) + ")"
     }
     
     func presentSheet(currentCurrencies: [String]) {
