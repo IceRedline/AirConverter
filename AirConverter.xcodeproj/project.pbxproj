@@ -14,6 +14,7 @@
 		997D2BEA2DE5853C00035942 /* ConverterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2BE92DE5853C00035942 /* ConverterPresenterProtocol.swift */; };
 		997D2BEC2DE5855600035942 /* ConverterViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2BEB2DE5855600035942 /* ConverterViewControllerProtocol.swift */; };
 		997D2C3B2DE58DBB00035942 /* ConverterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2C3A2DE58DBB00035942 /* ConverterTableViewCell.swift */; };
+		99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 99B1309F2DEDA9FE00271E45 /* DGCharts */; };
 		99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */; };
 		99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7D012DD0BCA400352A16 /* Animations.swift */; };
 		99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4712DCFB091006F5F7C /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +300,7 @@
 			);
 			name = AirConverter;
 			packageProductDependencies = (
+				99B1309F2DEDA9FE00271E45 /* DGCharts */,
 			);
 			productName = AirConverter;
 			productReference = 99D6A4562DCFAF14006F5F7C /* AirConverter.app */;
@@ -328,6 +331,9 @@
 			);
 			mainGroup = 99D6A44D2DCFAF14006F5F7C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99D6A4572DCFAF14006F5F7C /* Products */;
 			projectDirPath = "";
@@ -629,6 +635,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99B1309F2DEDA9FE00271E45 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99D6A44E2DCFAF14006F5F7C /* Project object */;
 }

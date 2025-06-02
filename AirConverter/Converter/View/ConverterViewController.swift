@@ -5,13 +5,15 @@
 //  Created by Артем Табенский on 08.05.2025.
 //
 
-import SwiftUI
+import UIKit
+import DGCharts
 
 class ConverterViewController: UIViewController, ConverterViewControllerProtocol {
     
     var presenter: ConverterPresenterProtocol?
     
     var tableView = UITableView()
+    var chart = LineChartView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,11 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
         tableView.dataSource = presenter
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
+        
+        chart.translatesAutoresizingMaskIntoConstraints = false
+        chart.layer.cornerRadius = 16
+        //chart.backgroundColor = .systemGray6
+        view.addSubview(chart)
     }
     
     private func setupConstraints() {
@@ -42,6 +49,10 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.defaultPadding),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.defaultPadding),
+            chart.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.defaultPadding),
+            chart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.defaultPadding),
+            chart.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 75),
+            chart.heightAnchor.constraint(equalToConstant: 250),
         ])
     }
     

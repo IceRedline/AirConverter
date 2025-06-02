@@ -1,9 +1,12 @@
 import UIKit
+import DGCharts
 
 final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
     
     var view: ConverterViewControllerProtocol?
     let currencyWebService = CurrencyWebService.shared
+    
+    let dateFormatter = DateFormatter()
     
     let currencies: [CurrencyModel] = [
         CurrencyModel(name: "USD", flag: "🇺🇸", amount: 0),
@@ -19,8 +22,9 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
     var inverseRates: [String : Double]?
     
     // MARK: - viewDidLoad
-
+    
     func viewDidLoad() {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         loadExchangeRates()
     }
     
@@ -57,6 +61,8 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         currencyWebService.fetchRates(for: toCurrency.name.lowercased()) { resultRates in
             self.inverseRates = resultRates
         }
+        
+        updateChartData()
     }
     
     func calculate(standart: Bool) {
@@ -78,6 +84,50 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         view?.tableView.reloadRows(at: [indexPath], with: .none)
     }
     
+    
+    func updateChartData() {
+        let today = Date()
+        let datesArray: [String] = (0...10).compactMap {
+            guard let date = Calendar.current.date(byAdding: .day, value: -$0, to: today) else { return nil }
+            return dateFormatter.string(from: date)
+        }
+        var ratesStatisticsArray = Array(repeating: 0.0, count: datesArray.count)
+        let dispatchGroup = DispatchGroup()
+        
+        for (index, dateElement) in datesArray.enumerated() {
+            dispatchGroup.enter()
+            currencyWebService.fetchRates(for: fromCurrency.name.lowercased(), on: dateElement) { resultRates in
+                if let rate = resultRates[self.toCurrency.name.lowercased()] {
+                    ratesStatisticsArray[index] = rate
+                }
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            print("Все курсы загружены в правильном порядке:")
+            for (date, rate) in zip(datesArray, ratesStatisticsArray) {
+                print("\(date): \(rate)")
+            }
+            
+            let lineChartEntries = [
+                ChartDataEntry(x: 10, y: Double(ratesStatisticsArray[0])),
+                ChartDataEntry(x: 9, y: Double(ratesStatisticsArray[1])),
+                ChartDataEntry(x: 8, y: Double(ratesStatisticsArray[2])),
+                ChartDataEntry(x: 7, y: Double(ratesStatisticsArray[3])),
+                ChartDataEntry(x: 6, y: Double(ratesStatisticsArray[4])),
+                ChartDataEntry(x: 5, y: Double(ratesStatisticsArray[5])),
+                ChartDataEntry(x: 4, y: Double(ratesStatisticsArray[6])),
+                ChartDataEntry(x: 3, y: Double(ratesStatisticsArray[7])),
+                ChartDataEntry(x: 2, y: Double(ratesStatisticsArray[8])),
+                ChartDataEntry(x: 1, y: Double(ratesStatisticsArray[9])),
+            ]
+            let dataSet = LineChartDataSet(entries: lineChartEntries)
+            let data = LineChartData(dataSet: dataSet)
+            self.view?.chart.data = data
+        }
+        
+    }
     
     
     // MARK: - UITableViewDataSource
@@ -106,7 +156,7 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
     }
     
     // MARK: - UITableViewDelegate
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
