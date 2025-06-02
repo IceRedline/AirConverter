@@ -1,10 +1,3 @@
-//
-//  ConverterViewModel.swift
-//  AirConverter
-//
-//  Created by Артем Табенский on 08.05.2025.
-//
-
 import UIKit
 
 final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
@@ -25,9 +18,13 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
     var rates: [String : Double]?
     var inverseRates: [String : Double]?
     
+    // MARK: - viewDidLoad
+
     func viewDidLoad() {
         loadExchangeRates()
     }
+    
+    // MARK: - viewDidLoad
     
     @objc func topTextFieldChanged(_ sender: UITextField, rowNumber: Int) {
         if sender.text != ""  {

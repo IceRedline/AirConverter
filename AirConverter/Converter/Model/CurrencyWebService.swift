@@ -13,10 +13,10 @@ class CurrencyWebService {
     
     private init() {}
     
-    let baseURL: String = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/"
+    let baseURL: String = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@"
     
-    func makeURLRequest(currencyLiteral: String) -> URLRequest? {
-        let fullURLString = baseURL + "\(currencyLiteral).json"
+    func makeURLRequest(currencyLiteral: String, date: String = "latest") -> URLRequest? {
+        let fullURLString = baseURL + "\(date)" + "/v1/currencies/" + "\(currencyLiteral).json"
         
         guard let url = URL(string: fullURLString) else {
             print("не удалось создать url с \(fullURLString)")
