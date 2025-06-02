@@ -52,6 +52,7 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         self.fromCurrency = currencies.first(where: {$0.name == fromCurrency})!
         self.toCurrency = currencies.first(where: {$0.name == toCurrency})!
         view?.tableView.reloadData()
+        view?.updateLabel(fromCurrency: fromCurrency, toCurrency: toCurrency)
     }
     
     func loadExchangeRates() {
@@ -63,6 +64,7 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         }
         
         updateChartData()
+        view?.updateLabel(fromCurrency: fromCurrency.name, toCurrency: toCurrency.name)
     }
     
     func calculate(standart: Bool) {
@@ -123,10 +125,8 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
                 ChartDataEntry(x: 1, y: Double(ratesStatisticsArray[9])),
             ]
             let dataSet = LineChartDataSet(entries: lineChartEntries)
-            let data = LineChartData(dataSet: dataSet)
-            self.view?.chart.data = data
+            self.view?.updateChart(dataSet: dataSet)
         }
-        
     }
     
     
