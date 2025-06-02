@@ -125,6 +125,7 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
                 ChartDataEntry(x: 1, y: Double(ratesStatisticsArray[9])),
             ]
             let dataSet = LineChartDataSet(entries: lineChartEntries)
+            dataSet.valueFormatter = TruncatingValueFormatter()
             self.view?.updateChart(dataSet: dataSet)
         }
     }

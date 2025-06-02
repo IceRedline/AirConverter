@@ -119,7 +119,7 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
     func presentSheet(currentCurrencies: [String]) {
         let controller = SheetViewController(startCurrencies: currentCurrencies)
         if let sheetController = controller.sheetPresentationController {
-            sheetController.detents = [.medium(), .large()]
+            sheetController.detents = [.medium()]
             sheetController.prefersGrabberVisible = true
         }
         
