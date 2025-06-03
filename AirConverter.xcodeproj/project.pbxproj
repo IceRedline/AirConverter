@@ -16,6 +16,7 @@
 		997D2C3B2DE58DBB00035942 /* ConverterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2C3A2DE58DBB00035942 /* ConverterTableViewCell.swift */; };
 		99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 99B1309F2DEDA9FE00271E45 /* DGCharts */; };
 		99B130BB2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B130BA2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift */; };
+		99B130D62DEEE11900271E45 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */; };
 		99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */; };
 		99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7D012DD0BCA400352A16 /* Animations.swift */; };
 		99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4712DCFB091006F5F7C /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */,
+				99B130D62DEEE11900271E45 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +314,7 @@
 			name = AirConverter;
 			packageProductDependencies = (
 				99B1309F2DEDA9FE00271E45 /* DGCharts */,
+				99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */,
 			);
 			productName = AirConverter;
 			productReference = 99D6A4562DCFAF14006F5F7C /* AirConverter.app */;
@@ -344,6 +347,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */,
+				99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99D6A4572DCFAF14006F5F7C /* Products */;
@@ -657,6 +661,14 @@
 				minimumVersion = 5.1.0;
 			};
 		};
+		99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -664,6 +676,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
+		};
+		99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
