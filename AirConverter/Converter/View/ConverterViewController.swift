@@ -38,6 +38,7 @@ class ConverterViewController: UIViewController, ConverterViewControllerProtocol
     private func setupViews() {
         tableView.register(ConverterTableViewCell.self, forCellReuseIdentifier: "ConverterTableViewCell")
         tableView.layer.cornerRadius = 16
+        tableView.isScrollEnabled = false
         tableView.delegate = presenter
         tableView.dataSource = presenter
         tableView.translatesAutoresizingMaskIntoConstraints = false

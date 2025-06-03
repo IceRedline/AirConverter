@@ -52,6 +52,6 @@ final class WordsCounterPresenter: NSObject, WordsCounterPresenterProtocol {
 extension WordsCounterPresenter: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.text = ""
-        textView.textColor = .white
+        textView.textColor = .label
     }
 }
