@@ -7,6 +7,7 @@
 */
 
 "converter" = "Конвертер";
+"chart" = "График %@";
 "daysCalculator" = "Калькулятор дней";
 "howManyDays" = "Сколько дней прошло между двумя датами";
 "firstDate" = "Первая дата";
@@ -16,7 +17,7 @@
 "enjoyEveryDay" = "Радуйся каждому дню!";
 "...days" = "... дней";
 "chooseYourBirthday" = "Выбери свой день рождения:";
-"defaultBirthdayText" = "Ты наслаждаешься жизнью уже ... дней!";
+"defaultBirthdayText" = "Ты наслаждаешься жизнью уже ";
 "areYouLivingInTheFuture" = "Ты что, в будущем живешь?";
 "textAnalysis" = "Анализ текста";
 "totalWords" = "Всего слов";

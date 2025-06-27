@@ -14,6 +14,10 @@
 		997D2BEA2DE5853C00035942 /* ConverterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2BE92DE5853C00035942 /* ConverterPresenterProtocol.swift */; };
 		997D2BEC2DE5855600035942 /* ConverterViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2BEB2DE5855600035942 /* ConverterViewControllerProtocol.swift */; };
 		997D2C3B2DE58DBB00035942 /* ConverterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D2C3A2DE58DBB00035942 /* ConverterTableViewCell.swift */; };
+		99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 99B1309F2DEDA9FE00271E45 /* DGCharts */; };
+		99B130BB2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B130BA2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift */; };
+		99B130D62DEEE11900271E45 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */; };
+		99B130D92DEEE7AD00271E45 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 99B130D82DEEE7AD00271E45 /* ProgressHUD */; };
 		99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */; };
 		99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7D012DD0BCA400352A16 /* Animations.swift */; };
 		99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4712DCFB091006F5F7C /* Assets.xcassets */; };
@@ -48,6 +52,7 @@
 		997D2BE92DE5853C00035942 /* ConverterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPresenterProtocol.swift; sourceTree = "<group>"; };
 		997D2BEB2DE5855600035942 /* ConverterViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewControllerProtocol.swift; sourceTree = "<group>"; };
 		997D2C3A2DE58DBB00035942 /* ConverterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTableViewCell.swift; sourceTree = "<group>"; };
+		99B130BA2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TruncatingValueFormatter+stringForValue.swift"; sourceTree = "<group>"; };
 		99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		99CC7D012DD0BCA400352A16 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		99D6A4562DCFAF14006F5F7C /* AirConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,12 +89,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B130D92DEEE7AD00271E45 /* ProgressHUD in Frameworks */,
+				99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */,
+				99B130D62DEEE11900271E45 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99B130B92DEDCB4D00271E45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99B130BA2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		99CC7D002DD0BBCF00352A16 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +145,7 @@
 				99D6A4702DCFB091006F5F7C /* AppDelegate.swift */,
 				99D6A4782DCFB091006F5F7C /* SceneDelegate.swift */,
 				99D6A4742DCFB091006F5F7C /* LaunchScreen.storyboard */,
+				99B130B92DEDCB4D00271E45 /* Extensions */,
 				99CC7D032DD0BCAC00352A16 /* Services */,
 				99D6A4772DCFB091006F5F7C /* MainTabBarController.swift */,
 				99D6A4882DCFC426006F5F7C /* Converter */,
@@ -298,6 +315,9 @@
 			);
 			name = AirConverter;
 			packageProductDependencies = (
+				99B1309F2DEDA9FE00271E45 /* DGCharts */,
+				99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */,
+				99B130D82DEEE7AD00271E45 /* ProgressHUD */,
 			);
 			productName = AirConverter;
 			productReference = 99D6A4562DCFAF14006F5F7C /* AirConverter.app */;
@@ -328,6 +348,11 @@
 			);
 			mainGroup = 99D6A44D2DCFAF14006F5F7C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */,
+				99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				99B130D72DEEE7AD00271E45 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99D6A4572DCFAF14006F5F7C /* Products */;
 			projectDirPath = "";
@@ -363,6 +388,7 @@
 				9973878E2DEC366300A9B2B4 /* SheetViewController.swift in Sources */,
 				99D6A4942DCFC42F006F5F7C /* ConverterViewController.swift in Sources */,
 				99D6A4952DCFC42F006F5F7C /* ConverterPresenter.swift in Sources */,
+				99B130BB2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift in Sources */,
 				99F9AF802DDE7D2600D759F2 /* WordsCounterPresenterProtocol.swift in Sources */,
 				997387852DEB737700A9B2B4 /* CurrencyRates.swift in Sources */,
 				997D2BEC2DE5855600035942 /* ConverterViewControllerProtocol.swift in Sources */,
@@ -629,6 +655,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.1;
+			};
+		};
+		99B130D72DEEE7AD00271E45 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99B1309F2DEDA9FE00271E45 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		99B130D82DEEE7AD00271E45 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B130D72DEEE7AD00271E45 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99D6A44E2DCFAF14006F5F7C /* Project object */;
 }

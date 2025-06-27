@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import DGCharts
 
 protocol ConverterViewControllerProtocol {
     
     var presenter: ConverterPresenterProtocol? { get }
-    
     var tableView: UITableView { get }
+    var chart: LineChartView { get }
     
     func presentSheet(currentCurrencies: [String])
+    func updateChart(dataSet: LineChartDataSet)
+    func updateLabel(fromCurrency: String, toCurrency: String)
 }

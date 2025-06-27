@@ -15,7 +15,7 @@ class CurrencyWebService {
     
     let baseURL: String = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@"
     
-    func makeURLRequest(currencyLiteral: String, date: String = "latest") -> URLRequest? {
+    func makeURLRequest(currencyLiteral: String, date: String) -> URLRequest? {
         let fullURLString = baseURL + "\(date)" + "/v1/currencies/" + "\(currencyLiteral).json"
         
         guard let url = URL(string: fullURLString) else {
@@ -31,8 +31,8 @@ class CurrencyWebService {
     }
     
     
-    func fetchRates(for currency: String, completion: @escaping ([String: Double]) -> Void) {
-        guard let request = makeURLRequest(currencyLiteral: currency) else { return }
+    func fetchRates(for currency: String, on date: String = "latest", completion: @escaping ([String: Double]) -> Void) {
+        guard let request = makeURLRequest(currencyLiteral: currency, date: date) else { return }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
