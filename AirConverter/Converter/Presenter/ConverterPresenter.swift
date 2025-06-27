@@ -28,7 +28,7 @@ final class ConverterPresenter: NSObject, ConverterPresenterProtocol {
         loadExchangeRates()
     }
     
-    // MARK: - viewDidLoad
+    // MARK: - Methods
     
     @objc func topTextFieldChanged(_ sender: UITextField, rowNumber: Int) {
         if sender.text != ""  {

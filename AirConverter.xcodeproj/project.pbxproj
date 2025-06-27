@@ -17,6 +17,7 @@
 		99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 99B1309F2DEDA9FE00271E45 /* DGCharts */; };
 		99B130BB2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B130BA2DEDCB6500271E45 /* TruncatingValueFormatter+stringForValue.swift */; };
 		99B130D62DEEE11900271E45 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */; };
+		99B130D92DEEE7AD00271E45 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 99B130D82DEEE7AD00271E45 /* ProgressHUD */; };
 		99CC7CFF2DD0BBC200352A16 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7CFE2DD0BBC200352A16 /* CalculatorViewController.swift */; };
 		99CC7D022DD0BCA400352A16 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC7D012DD0BCA400352A16 /* Animations.swift */; };
 		99D6A47B2DCFB091006F5F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D6A4712DCFB091006F5F7C /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B130D92DEEE7AD00271E45 /* ProgressHUD in Frameworks */,
 				99B130A02DEDA9FE00271E45 /* DGCharts in Frameworks */,
 				99B130D62DEEE11900271E45 /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -315,6 +317,7 @@
 			packageProductDependencies = (
 				99B1309F2DEDA9FE00271E45 /* DGCharts */,
 				99B130D52DEEE11900271E45 /* IQKeyboardManagerSwift */,
+				99B130D82DEEE7AD00271E45 /* ProgressHUD */,
 			);
 			productName = AirConverter;
 			productReference = 99D6A4562DCFAF14006F5F7C /* AirConverter.app */;
@@ -348,6 +351,7 @@
 			packageReferences = (
 				99B1309E2DEDA9FE00271E45 /* XCRemoteSwiftPackageReference "Charts" */,
 				99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				99B130D72DEEE7AD00271E45 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99D6A4572DCFAF14006F5F7C /* Products */;
@@ -669,6 +673,14 @@
 				minimumVersion = 8.0.1;
 			};
 		};
+		99B130D72DEEE7AD00271E45 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -681,6 +693,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 99B130D42DEEE11900271E45 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		99B130D82DEEE7AD00271E45 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B130D72DEEE7AD00271E45 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
